@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>QIUZHIBAO</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- 正式环境下压缩的代码 -->
+    <!-- <link rel="stylesheet" href="http://g.alicdn.com/sui-mobile/sm/0.5.0/css/sm.min.css">
+    <!--如果你用到了拓展包中的组件，还需要引用下面两个
+    <link rel="stylesheet" href="http://g.alicdn.com/sui-mobile/sm/0.5.0/css/sm-extend.min.css"> -->
+
+    <!-- 开发环境下调试代码 -->
+    <link rel="stylesheet" href="http://g.alicdn.com/sui-mobile/sm/0.5.0/css/sm.css">
+    <!--如果你用到了拓展包中的组件，还需要引用下面两个-->
+    <link rel="stylesheet" href="http://g.alicdn.com/sui-mobile/sm/0.5.0/css/sm-extend.css">
+    <!-- my css -->
+    <style type="text/css">
+        #nav-me { margin-right: 0; }
+    </style>
+</head>
+<body>
+    <div class="page page-current" id='index'>
+        <header class="bar bar-nav">
+            <h1 class="title">QIUZHIBAO</h1>
+            <a id="nav-me" class="button button-link button-nav pull-right" href="#" data-transition='slide-out'>
+                <span style="font-size: 1.2rem;" class="icon icon-me"></span>
+            </a>
+        </header>
+        <nav class="bar bar-tab">
+            <a class="tab-item active external" href="/">
+                <span class="icon icon-home"></span>
+                <span class="tab-label">首页</span>
+            </a>
+            <a class="tab-item" href="#">
+                <span class="icon icon-browser"></span>
+                <span class="tab-label">探索</span>
+            </a>
+            <a class="tab-item" href="#">
+                <span class="icon icon-clock"></span>
+                <span class="tab-label">日程</span>
+            </a>
+            <a class="tab-item external" href="tabs/trainer">
+                <span class="icon icon-card"></span>
+                <span class="tab-label">培训师</span>
+            </a>
+        </nav>
+        <div class="content">
+            <!-- 这里是页面内容区 -->
+        主页内容待开发，请点击底部“培训师”，谢谢 ^_^
+        </div>
+    </div>
+
+<!-- js 文件 -->
+<!-- 正式环境下压缩的代码 -->
+<!-- <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/sui-mobile/sm/0.5.0/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/sui-mobile/sm/0.5.0/js/sm-extend.min.js' charset='utf-8'></script> -->
+<!-- 开发环境下调试代码 -->
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/sui-mobile/sm/0.5.0/js/sm.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/sui-mobile/sm/0.5.0/js/sm-extend.js' charset='utf-8'></script>
+
+<!-- my js -->
+<script type="text/javascript">
+    (function ($) {
+        $(function() {
+            $(document).on('click','#nav-me',function () {
+                $.alert('功能开发中，敬请期待 ^_^');
+            });
+        });
+    })(Zepto);
+</script>
+</body>
+</html>

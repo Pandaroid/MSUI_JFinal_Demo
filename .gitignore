@@ -1,0 +1,5 @@
+*.class
+*.DS_Store
+out/artifacts/jf_tc_war/jf-tc_war.war
+.idea*
+out*
