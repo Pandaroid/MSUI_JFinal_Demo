@@ -22,7 +22,7 @@
   </style>
 </head>
 <body>
-<div class="page page-current" id='index'>
+<div class="page page-current" id='trainer'>
   <header class="bar bar-nav">
     <h1 class="title">QIUZHIBAO</h1>
     <a id="nav-me" class="button button-link button-nav pull-right" href="#" data-transition='slide-out'>
@@ -67,6 +67,8 @@
 <script type="text/javascript">
   (function ($) {
     $(function() {
+      $.showIndicator();
+      // $.router.loadPage("../trainer/trainerList");
       $(document).on('click','#nav-me',function () {
         $.alert('功能开发中，敬请期待 ^_^');
       });

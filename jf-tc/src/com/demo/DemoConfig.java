@@ -18,6 +18,7 @@ public class DemoConfig extends JFinalConfig {
         me.add("/hello", HelloController.class);
         me.add("/", IndexController.class);
         me.add("/tabs", TabsController.class);
+        me.add("/trainer", TrainerController.class);
     }
 
     @Override
