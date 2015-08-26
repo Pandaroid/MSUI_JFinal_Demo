@@ -18,14 +18,88 @@
     <link rel="stylesheet" href="http://g.alicdn.com/sui-mobile/sm/0.5.0/css/sm-extend.css">
     <!-- my css -->
     <style type="text/css">
-        #nav-me { margin-right: 0; }
+        body, button, input, select, textarea {
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -moz-font-feature-settings: "liga","kern";
+        }
+        body {
+            margin: 0;
+            background: #fff;
+            font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+            font-weight: 400;
+            color: #333;
+        }
+        body, pre {
+            line-height: 1.6;
+        }
+
+        .avatar {
+            width: 3.5rem;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+        .list-block.media-list .item-title, .list-block li.media-item .item-title {
+            font-weight: bold;
+        }
+        .item-media { position: absolute; }
+        .list-block .item-media + .item-inner {
+            margin-left: 5.6rem;
+            padding-right: 1.9rem;
+        }
+        .list-block .item-subtitle { font-weight: bold; }
+        .list-block, .list-block .item-subtitle { font-size: .92rem; }
+        .list-block.media-list .item-media, .list-block li.media-item .item-media { padding-top: .6rem; }
+        .item-title-row {
+            margin-bottom: .2rem;
+        }
+        .item-description {
+            color: #989898;
+            font-size: .62rem;
+            margin-top: .3rem;
+            text-align: justify;
+        }
+        .card {
+            margin: 0;
+        }
+        .list-block .item-content {
+            padding-left: 1.3rem;
+        }
     </style>
 </head>
 <body>
 <div class="page page-current" id='trainerList'>
     <div class="content">
         <!-- 这里是页面内容区 -->
-        2“培训师列表”页内容，欢迎光临 ^_^
+        <div class="card">
+            <div class="card-content">
+                <div class="list-block media-list">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-media">
+                                <img class="avatar" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">
+                                        张晨
+                                    </div>
+                                </div>
+                                <div class="item-subtitle">如何应对电话面试</div>
+                                <div class="item-description">职业生涯规划师，5年从业经验，辅导过 1000+ 学生，擅长解决学生在面试中可能遇到的各种问题。</div>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span>2015/01/15</span>
+                <span>5 评论</span>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -43,7 +117,7 @@
 <script type="text/javascript">
     (function ($) {
         $(function() {
-            $.showIndicator();
+
         });
     })(Zepto);
 </script>
