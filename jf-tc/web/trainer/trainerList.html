@@ -103,13 +103,44 @@
         .date-date-calendar {
             font-size: 1.19rem;
             font-weight: bold;
-            color: rgb(8, 179, 30);
+            color: #02b218;
         }
         .date-date-which {
             text-align: center;
             font-size: .75rem;
             font-weight: bold;
             margin-top: -.3rem;
+        }
+        .list-block ul ul.date-list {
+            padding-left: 0;
+            padding-top: .5rem;
+        }
+        .list-block ul ul.date-list li div {
+            display: inline-block;
+        }
+        .date-list-item-time {
+            font-size: .75rem;
+            color: #989898;
+            margin-bottom: .5rem;
+        }
+        .date-list-item-time-active {
+            font-weight: bold;
+            color: #252525;
+        }
+        .date-list-item-btn-div {
+            position: absolute;
+            right: 0;
+        }
+        .button-success {
+            color: #fff;
+            border-color: #02b218;
+            background-color: rgb(2, 178, 24);
+        }
+        .button.disabled, .button.button-primary.disabled, .button.button-success.disabled, .button.button-danger.disabled, .button.button-warning.disabled {
+            color: #fff;
+            cursor: not-allowed;
+            border-color: rgb(182, 182, 182);
+            background-color: rgb(194, 194, 194);
         }
     </style>
 </head>
@@ -137,7 +168,6 @@
                                     <div class="item-price-free">限时免费</div>
                                     <div class="item-price-per">100元 / 小时</div>
                                 </div>
-
                             </div>
                         </li>
                         <li class="item-content">
@@ -149,6 +179,26 @@
                                 <div class="date-date">
                                     <div class="date-date-calendar">07-18</div>
                                     <div class="date-date-which">今天</div>
+                                </div>
+                                <div>
+                                    <ul class="date-list">
+                                        <li>
+                                            <div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>
+                                            <div class="date-list-item-btn-div"><a href="#" class="button button-success">预约</a></div>
+                                        </li>
+                                        <li>
+                                            <div class="date-list-item-time">上午 9:00-10:00</div>
+                                            <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
+                                        </li>
+                                        <li>
+                                            <div class="date-list-item-time">下午 2:00-3:00</div>
+                                            <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
+                                        </li>
+                                        <li>
+                                            <div class="date-list-item-time">下午 4:00-5:00</div>
+                                            <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </li>
