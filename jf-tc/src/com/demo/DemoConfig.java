@@ -9,7 +9,7 @@ import com.jfinal.render.ViewType;
 public class DemoConfig extends JFinalConfig {
     @Override
     public void configConstant(Constants me) {
-        me.setViewType(ViewType.JSP);
+        // me.setViewType(ViewType.JSP);
         me.setDevMode(true);
     }
 
