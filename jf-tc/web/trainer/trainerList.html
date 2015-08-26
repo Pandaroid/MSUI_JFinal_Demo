@@ -59,6 +59,7 @@
             color: #989898;
             font-size: .62rem;
             margin-top: .3rem;
+            margin-bottom: .2rem;
             text-align: justify;
         }
         .card {
@@ -66,6 +67,33 @@
         }
         .list-block .item-content {
             padding-left: 1.3rem;
+        }
+        .item-price {
+            position: absolute;
+            left: -5.8rem;
+            margin-top: -2.3rem;
+            color: rgb(255,130,97);
+            font-size: .75rem;
+        }
+        .item-price-free {
+            text-align: center;
+        }
+        .item-price-per {
+            color: #989898;
+            margin-top: -.2rem;
+            text-decoration: line-through;
+        }
+        .item-hr {
+            width: 100%;
+            height: 1px;
+            border-bottom: 1px solid #e7e7e7;
+        }
+        .list-block .item-media + .item-inner-date {
+            padding-right: 1.1rem;
+            padding-top: 0;
+        }
+        .list-block .item-inner:after {
+            background-color: transparent;
         }
     </style>
 </head>
@@ -89,8 +117,20 @@
                                 </div>
                                 <div class="item-subtitle">如何应对电话面试</div>
                                 <div class="item-description">职业生涯规划师，5年从业经验，辅导过 1000+ 学生，擅长解决学生在面试中可能遇到的各种问题。</div>
-                            </div>
+                                <div class="item-price">
+                                    <div class="item-price-free">限时免费</div>
+                                    <div class="item-price-per">100元 / 小时</div>
+                                </div>
 
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media">
+
+                            </div>
+                            <div class="item-inner item-inner-date">
+                                <div class="item-hr"></div>
+                            </div>
                         </li>
                     </ul>
                 </div>

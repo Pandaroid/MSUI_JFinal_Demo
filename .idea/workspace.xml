@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f86e83d6-4273-4da3-9fbc-8735659cd609" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jf-tc/web/index.html" afterPath="$PROJECT_DIR$/jf-tc/web/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jf-tc/web/tabs/trainer.html" afterPath="$PROJECT_DIR$/jf-tc/web/tabs/trainer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html" afterPath="$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -64,8 +62,8 @@
       <file leaf-file-name="trainerList.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38127092">
-              <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.3478261">
+              <caret line="92" column="27" selection-start-line="92" selection-start-column="27" selection-end-line="92" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -743,12 +741,12 @@
       <workItem from="1440438365813" duration="617000" />
       <workItem from="1440525855792" duration="2113000" />
       <workItem from="1440596127469" duration="3026000" />
-      <workItem from="1440607442609" duration="4462000" />
+      <workItem from="1440607442609" duration="6268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16234000" />
+    <option name="totallyTimeSpent" value="18040000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1268,8 +1266,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38127092">
-          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.3478261">
+          <caret line="92" column="27" selection-start-line="92" selection-start-column="27" selection-end-line="92" selection-end-column="27" />
           <folding />
         </state>
       </provider>
