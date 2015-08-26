@@ -165,6 +165,18 @@
             color: #02b218;
             border-top: 3px solid #02b218;
         }
+        .bar-nav {
+            background-color: #02b218;
+        }
+        .title, .bar .button-link {
+            color: #fff;
+        }
+        .title {
+            font-weight: bold;
+        }
+        .modal-button {
+            color: #02b218;
+        }
     </style>
 </head>
 <body>
@@ -207,7 +219,7 @@
                                     <ul class="date-list">
                                         <li>
                                             <div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>
-                                            <div class="date-list-item-btn-div"><a href="#" class="button button-success">预约</a></div>
+                                            <div class="date-list-item-btn-div"><a href="#" class="button button-success date-btn">预约</a></div>
                                         </li>
                                         <li>
                                             <div class="date-list-item-time">上午 9:00-10:00</div>
@@ -298,7 +310,7 @@
                                     <ul class="date-list">
                                         <li>
                                             <div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>
-                                            <div class="date-list-item-btn-div"><a href="#" class="button button-success">预约</a></div>
+                                            <div class="date-list-item-btn-div"><a href="#" class="button button-success date-btn">预约</a></div>
                                         </li>
                                         <li>
                                             <div class="date-list-item-time">上午 9:00-10:00</div>
@@ -370,7 +382,12 @@
 <script type="text/javascript">
     (function ($) {
         $(function() {
-
+            $(document).on('click', '.date-btn', function () {
+                $.prompt('培训师会在约定时间与您联系', function (value) {
+                    $.alert('您输入的是 “' + value + '”。');
+                });
+                $('.modal-text-input').attr('placeholder', '请输入您的电话号码');
+            });
         });
     })(Zepto);
 </script>
