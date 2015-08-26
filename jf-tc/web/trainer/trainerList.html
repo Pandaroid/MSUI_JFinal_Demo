@@ -67,6 +67,8 @@
         }
         .list-block .item-content {
             padding-left: 1.3rem;
+        }
+        .list-block .item-content-top {
             min-height: 7.32rem;
         }
         .item-price {
@@ -111,9 +113,11 @@
             font-weight: bold;
             margin-top: -.3rem;
         }
+        .date-date-right-container {
+            padding-top: .5rem;
+        }
         .list-block ul ul.date-list {
             padding-left: 0;
-            padding-top: .5rem;
         }
         .list-block ul ul.date-list li div {
             display: inline-block;
@@ -142,6 +146,25 @@
             border-color: rgb(182, 182, 182);
             background-color: rgb(194, 194, 194);
         }
+        .button.button-big {
+            height: 1.8rem;
+            font-size: .85rem;
+            line-height: 1.7rem;
+        }
+        .date-date-big-btn-wrapper {
+            padding-top: .2rem;
+        }
+        .list-block .item-media + .item-inner-date-today {
+            padding-bottom: 0;
+        }
+        .card-content {
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        .bar-tab .tab-item.active, .bar-tab .tab-item:active {
+            color: #02b218;
+            border-top: 3px solid #02b218;
+        }
     </style>
 </head>
 <body>
@@ -152,7 +175,7 @@
             <div class="card-content">
                 <div class="list-block media-list">
                     <ul>
-                        <li class="item-content">
+                        <li class="item-content item-content-top">
                             <div class="item-media">
                                 <img class="avatar" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
                             </div>
@@ -162,7 +185,7 @@
                                         张晨
                                     </div>
                                 </div>
-                                <div class="item-subtitle">如何应对电话面试</div>
+                                <div class="item-subtitle">如何应对电话面试?</div>
                                 <div class="item-description">职业生涯规划师，5年从业经验，辅导过 1000+ 学生，擅长解决学生在面试中可能遇到的各种问题。</div>
                                 <div class="item-price">
                                     <div class="item-price-free">限时免费</div>
@@ -174,13 +197,13 @@
                             <div class="item-media">
 
                             </div>
-                            <div class="item-inner item-inner-date">
+                            <div class="item-inner item-inner-date item-inner-date-today">
                                 <div class="item-hr"></div>
                                 <div class="date-date">
                                     <div class="date-date-calendar">07-18</div>
                                     <div class="date-date-which">今天</div>
                                 </div>
-                                <div>
+                                <div class="date-date-right-container">
                                     <ul class="date-list">
                                         <li>
                                             <div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>
@@ -202,14 +225,134 @@
                                 </div>
                             </div>
                         </li>
+                        <li class="item-content">
+                            <div class="item-media">
+
+                            </div>
+                            <div class="item-inner item-inner-date">
+                                <div class="date-date">
+                                    <div class="date-date-calendar">07-19</div>
+                                    <div class="date-date-which">明天</div>
+                                </div>
+                                <div class="date-date-right-container">
+                                    <div class="date-date-big-btn-wrapper">
+                                        <a href="#" class="button button-success button-big">预约</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media">
+
+                            </div>
+                            <div class="item-inner item-inner-date">
+                                <div class="date-date">
+                                    <div class="date-date-calendar">07-20</div>
+                                    <div class="date-date-which">后天</div>
+                                </div>
+                                <div class="date-date-right-container">
+                                    <div class="date-date-big-btn-wrapper">
+                                        <a href="#" class="button disabled button-big">已满</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="card-footer">
-                <span>2015/01/15</span>
-                <span>5 评论</span>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <div class="list-block media-list">
+                    <ul>
+                        <li class="item-content item-content-top">
+                            <div class="item-media">
+                                <img class="avatar" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">
+                                        张晨1
+                                    </div>
+                                </div>
+                                <div class="item-subtitle">如何应对电话面试1？</div>
+                                <div class="item-description">职业生涯规划师，5年从业经验，辅导过 1000+ 学生，擅长解决学生在面试中可能遇到的各种问题。</div>
+                                <div class="item-price">
+                                    <div class="item-price-free">限时免费</div>
+                                    <div class="item-price-per">100元 / 小时</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media">
+
+                            </div>
+                            <div class="item-inner item-inner-date item-inner-date-today">
+                                <div class="item-hr"></div>
+                                <div class="date-date">
+                                    <div class="date-date-calendar">07-18</div>
+                                    <div class="date-date-which">今天</div>
+                                </div>
+                                <div class="date-date-right-container">
+                                    <ul class="date-list">
+                                        <li>
+                                            <div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>
+                                            <div class="date-list-item-btn-div"><a href="#" class="button button-success">预约</a></div>
+                                        </li>
+                                        <li>
+                                            <div class="date-list-item-time">上午 9:00-10:00</div>
+                                            <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
+                                        </li>
+                                        <li>
+                                            <div class="date-list-item-time">下午 2:00-3:00</div>
+                                            <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
+                                        </li>
+                                        <li>
+                                            <div class="date-list-item-time">下午 4:00-5:00</div>
+                                            <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media">
+
+                            </div>
+                            <div class="item-inner item-inner-date">
+                                <div class="date-date">
+                                    <div class="date-date-calendar">07-19</div>
+                                    <div class="date-date-which">明天</div>
+                                </div>
+                                <div class="date-date-right-container">
+                                    <div class="date-date-big-btn-wrapper">
+                                        <a href="#" class="button button-success button-big">预约</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media">
+
+                            </div>
+                            <div class="item-inner item-inner-date">
+                                <div class="date-date">
+                                    <div class="date-date-calendar">07-20</div>
+                                    <div class="date-date-which">后天</div>
+                                </div>
+                                <div class="date-date-right-container">
+                                    <div class="date-date-big-btn-wrapper">
+                                        <a href="#" class="button disabled button-big">已满</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
+
     </div>
 </div>
 
