@@ -64,9 +64,7 @@
             margin-bottom: .2rem;
             text-align: justify;
         }
-        .card {
-            margin: 0;
-        }
+
         .list-block .item-content {
             padding-left: 1.3rem;
         }
@@ -215,6 +213,14 @@
             -ms-transition: all 1s;
             -o-transition: all 1s;
             transition: all 1s;
+        }
+
+        .card {
+            -webkit-transition: all 2s;
+            -moz-transition: all 2s;
+            -ms-transition: all 2s;
+            -o-transition: all 2s;
+            transition: all 2s;
         }
     </style>
 </head>
@@ -409,7 +415,7 @@
                 page: 1,
                 limit: 20,
                 genCard: function (idx) {
-                    return ['<div class="card">',
+                    return ['<div style="opacity: 0; transform: translate(0, 25rem)" class="card">',
                                 '<div class="card-content">',
                                         '<div class="list-block media-list">',
                                         '<ul>',
@@ -551,6 +557,15 @@
                     var me = this;
                     setTimeout(function () {
                         $('.infinite-scroll-preloader').before(htmlArr.join(''));
+                        /*var infiniteScrollPreloader = $('.infinite-scroll-preloader');
+                        for(idx in htmlArr) {
+                            var html = htmlArr[idx];
+                            infiniteScrollPreloader.before(html);
+                        }*/
+                        setTimeout(function () {
+                            $('.card').css('opacity', 1).css('transform', 'translate(0, 0)');
+                        }, 10);
+                        //
                         ++me.page;
                         me.isLoading = false;
                     }, 3000);

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f86e83d6-4273-4da3-9fbc-8735659cd609" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html" afterPath="$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="QiuZhiBao.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,8 +49,8 @@
       <file leaf-file-name="trainer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jf-tc/web/tabs/trainer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="18" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="18" />
+            <state vertical-scroll-proportion="-4.0555553">
+              <caret line="91" column="14" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#a#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -62,17 +61,19 @@
       <file leaf-file-name="trainerList.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48160535">
-              <caret line="216" column="29" selection-start-line="216" selection-start-column="29" selection-end-line="216" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.5819398">
+              <caret line="222" column="29" selection-start-line="222" selection-start-column="29" selection-end-line="222" selection-end-column="29" />
               <folding>
-                <marker date="1440863104623" expanded="true" signature="16947:16982" placeholder="..." />
-                <marker date="1440863104623" expanded="true" signature="17033:17055" placeholder="..." />
-                <marker date="1440863104623" expanded="true" signature="17175:17194" placeholder="..." />
-                <marker date="1440863104623" expanded="true" signature="17302:17321" placeholder="..." />
-                <marker date="1440863104623" expanded="true" signature="17429:17447" placeholder="..." />
-                <marker date="1440863104623" expanded="true" signature="17547:17560" placeholder="..." />
-                <marker date="1440863104623" expanded="true" signature="23288:23310" placeholder="..." />
-                <marker date="1440863104623" expanded="true" signature="25649:25671" placeholder="..." />
+                <marker date="1440864827282" expanded="true" signature="17106:17141" placeholder="..." />
+                <marker date="1440864827282" expanded="true" signature="17192:17214" placeholder="..." />
+                <marker date="1440864827282" expanded="true" signature="17334:17353" placeholder="..." />
+                <marker date="1440864827282" expanded="true" signature="17461:17480" placeholder="..." />
+                <marker date="1440864827282" expanded="true" signature="17588:17606" placeholder="..." />
+                <marker date="1440864827282" expanded="true" signature="17706:17719" placeholder="..." />
+                <marker date="1440864827282" expanded="true" signature="18851:18862" placeholder="..." />
+                <marker date="1440864827282" expanded="true" signature="18851:18893" placeholder="..." />
+                <marker date="1440864827282" expanded="true" signature="23498:23520" placeholder="..." />
+                <marker date="1440864827282" expanded="true" signature="25859:25881" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -739,12 +740,12 @@
       <workItem from="1440630936138" duration="661000" />
       <workItem from="1440683108200" duration="2433000" />
       <workItem from="1440813136988" duration="25622000" />
-      <workItem from="1440861272600" duration="1717000" />
+      <workItem from="1440861272600" duration="3689000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56428000" />
+    <option name="totallyTimeSpent" value="58400000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1221,8 +1222,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jf-tc/web/tabs/trainer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="18" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="18" />
+        <state vertical-scroll-proportion="-4.0555553">
+          <caret line="91" column="14" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#span#0;n#a#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -1231,17 +1232,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48160535">
-          <caret line="216" column="29" selection-start-line="216" selection-start-column="29" selection-end-line="216" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.5819398">
+          <caret line="222" column="29" selection-start-line="222" selection-start-column="29" selection-end-line="222" selection-end-column="29" />
           <folding>
-            <marker date="1440863104623" expanded="true" signature="16947:16982" placeholder="..." />
-            <marker date="1440863104623" expanded="true" signature="17033:17055" placeholder="..." />
-            <marker date="1440863104623" expanded="true" signature="17175:17194" placeholder="..." />
-            <marker date="1440863104623" expanded="true" signature="17302:17321" placeholder="..." />
-            <marker date="1440863104623" expanded="true" signature="17429:17447" placeholder="..." />
-            <marker date="1440863104623" expanded="true" signature="17547:17560" placeholder="..." />
-            <marker date="1440863104623" expanded="true" signature="23288:23310" placeholder="..." />
-            <marker date="1440863104623" expanded="true" signature="25649:25671" placeholder="..." />
+            <marker date="1440864827282" expanded="true" signature="17106:17141" placeholder="..." />
+            <marker date="1440864827282" expanded="true" signature="17192:17214" placeholder="..." />
+            <marker date="1440864827282" expanded="true" signature="17334:17353" placeholder="..." />
+            <marker date="1440864827282" expanded="true" signature="17461:17480" placeholder="..." />
+            <marker date="1440864827282" expanded="true" signature="17588:17606" placeholder="..." />
+            <marker date="1440864827282" expanded="true" signature="17706:17719" placeholder="..." />
+            <marker date="1440864827282" expanded="true" signature="18851:18862" placeholder="..." />
+            <marker date="1440864827282" expanded="true" signature="18851:18893" placeholder="..." />
+            <marker date="1440864827282" expanded="true" signature="23498:23520" placeholder="..." />
+            <marker date="1440864827282" expanded="true" signature="25859:25881" placeholder="..." />
           </folding>
         </state>
       </provider>
