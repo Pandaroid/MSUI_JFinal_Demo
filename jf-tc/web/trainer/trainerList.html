@@ -215,9 +215,9 @@
 </head>
 <body>
 <div class="page page-current" id='trainerList'>
-    <div class="content infinite-scroll" data-distance="100">
+    <div data-type="native" class="content infinite-scroll" data-distance="100">
         <!-- 这里是页面内容区 -->
-        <div class="card">
+        <!--<div class="card">
             <div class="card-content">
                 <div class="list-block media-list">
                     <ul>
@@ -342,135 +342,12 @@
                     </ul>
                 </div>
             </div>
+        </div>-->
+
+        <!-- 加载提示符 -->
+        <div class="infinite-scroll-preloader">
+            <div class="preloader"></div>
         </div>
-
-        <div class="card">
-            <div class="card-content">
-                <div class="list-block media-list">
-                    <ul>
-                        <li class="item-content item-content-top">
-                            <div class="item-media">
-                                <img class="avatar" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
-                            </div>
-                            <div class="item-inner">
-                                <div class="item-title-row">
-                                    <div class="item-title">
-                                        张晨1
-                                    </div>
-                                </div>
-                                <div class="item-subtitle">如何应对电话面试1？</div>
-                                <div class="item-description">职业生涯规划师，5年从业经验，辅导过 1000+ 学生，擅长解决学生在面试中可能遇到的各种问题。</div>
-                                <div class="item-price">
-                                    <div class="item-price-free">限时免费</div>
-                                    <div class="item-price-per">100元 / 小时</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item-content">
-                            <div class="item-media">
-
-                            </div>
-                            <div class="item-inner item-inner-date item-inner-date-today">
-                                <div class="item-hr"></div>
-                                <div class="date-date">
-                                    <div class="date-date-calendar">07-18</div>
-                                    <div class="date-date-which">今天</div>
-                                </div>
-                                <div class="date-date-right-container">
-                                    <ul class="date-list">
-                                        <li>
-                                            <div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>
-                                            <div class="date-list-item-btn-div"><a href="#" class="button button-success date-btn">预约</a></div>
-                                        </li>
-                                        <li>
-                                            <div class="date-list-item-time">上午 9:00-10:00</div>
-                                            <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
-                                        </li>
-                                        <li>
-                                            <div class="date-list-item-time">下午 2:00-3:00</div>
-                                            <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
-                                        </li>
-                                        <li>
-                                            <div class="date-list-item-time">下午 4:00-5:00</div>
-                                            <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item-content">
-                            <div class="item-media">
-
-                            </div>
-                            <div class="item-inner item-inner-date">
-                                <div class="date-date">
-                                    <div class="date-date-calendar">07-19</div>
-                                    <div class="date-date-which">明天</div>
-                                </div>
-                                <div class="date-date-right-container">
-                                    <div class="date-date-big-btn-wrapper">
-                                        <a href="#" class="date-collapse button button-success button-big">预约</a>
-                                        <ul class="date-list date-list-collapse" style="opacity: 0; height: 0;">
-                                            <li>
-                                                <div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>
-                                                <div class="date-list-item-btn-div"><a href="#" class="button button-success date-btn">预约</a></div>
-                                            </li>
-                                            <li>
-                                                <div class="date-list-item-time">上午 9:00-10:00</div>
-                                                <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
-                                            </li>
-                                            <li>
-                                                <div class="date-list-item-time">下午 2:00-3:00</div>
-                                                <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
-                                            </li>
-                                            <li>
-                                                <div class="date-list-item-time">下午 4:00-5:00</div>
-                                                <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item-content">
-                            <div class="item-media">
-
-                            </div>
-                            <div class="item-inner item-inner-date">
-                                <div class="date-date">
-                                    <div class="date-date-calendar">07-20</div>
-                                    <div class="date-date-which">后天</div>
-                                </div>
-                                <div class="date-date-right-container">
-                                    <div class="date-date-big-btn-wrapper">
-                                        <a href="#" class="date-collapse button disabled button-big">已满</a>
-                                        <ul class="date-list date-list-collapse" style="opacity: 0; height: 0;">
-                                            <li>
-                                                <div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>
-                                                <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
-                                            </li>
-                                            <li>
-                                                <div class="date-list-item-time">上午 9:00-10:00</div>
-                                                <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
-                                            </li>
-                                            <li>
-                                                <div class="date-list-item-time">下午 2:00-3:00</div>
-                                                <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
-                                            </li>
-                                            <li>
-                                                <div class="date-list-item-time">下午 4:00-5:00</div>
-                                                <div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
 
@@ -481,8 +358,10 @@
 <script type='text/javascript' src='http://g.alicdn.com/sui-mobile/sm/0.5.0/js/sm-extend.min.js' charset='utf-8'></script> -->
 <!-- 开发环境下调试代码 -->
 <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.js' charset='utf-8'></script>
-<script type='text/javascript' src='http://g.alicdn.com/sui-mobile/sm/0.5.0/js/sm.js' charset='utf-8'></script>
-<script type='text/javascript' src='http://g.alicdn.com/sui-mobile/sm/0.5.0/js/sm-extend.js' charset='utf-8'></script>
+<!--<script type='text/javascript' src='http://g.alicdn.com/sui-mobile/sm/0.5.0/js/sm.js' charset='utf-8'></script>-->
+<script type='text/javascript' src='http://m.sui.taobao.org/dist/js/sm.js' charset='utf-8'></script>
+<!--<script type='text/javascript' src='http://g.alicdn.com/sui-mobile/sm/0.5.0/js/sm-extend.js' charset='utf-8'></script>-->
+<script type='text/javascript' src='http://m.sui.taobao.org/dist/js/sm-extend.js' charset='utf-8'></script>
 
 <!-- my js -->
 <script type="text/javascript">
@@ -652,6 +531,164 @@
                 }
             });*/
             //
+            var infiniteScrollLoader = {
+                page: 1,
+                limit: 20,
+                genCard: function (idx) {
+                    return ['<div class="card">',
+                                '<div class="card-content">',
+                                        '<div class="list-block media-list">',
+                                        '<ul>',
+                                        '<li class="item-content item-content-top">',
+                                        '<div class="item-media">',
+                                        '<img class="avatar" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">',
+                                        '</div>',
+                                        '<div class="item-inner">',
+                                        '<div class="item-title-row">',
+                                        '<div class="item-title">',
+                                        '张晨', idx,
+                                        '</div>',
+                                        '</div>',
+                                        '<div class="item-subtitle">如何应对电话面试1？</div>',
+                                '<div class="item-description">职业生涯规划师，5年从业经验，辅导过 1000+ 学生，擅长解决学生在面试中可能遇到的各种问题。</div>',
+                                '<div class="item-price">',
+                                        '<div class="item-price-free">限时免费</div>',
+                                        '<div class="item-price-per">100元 / 小时</div>',
+                                '</div>',
+                                '</div>',
+                                '</li>',
+                                '<li class="item-content">',
+                                        '<div class="item-media">',
+
+                                        '</div>',
+                                        '<div class="item-inner item-inner-date item-inner-date-today">',
+                                        '<div class="item-hr"></div>',
+                                        '<div class="date-date">',
+                                        '<div class="date-date-calendar">07-18</div>',
+                                        '<div class="date-date-which">今天</div>',
+                                        '</div>',
+                                        '<div class="date-date-right-container">',
+                                        '<ul class="date-list">',
+                                        '<li>',
+                                        '<div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button button-success date-btn">预约</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">上午 9:00-10:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">下午 2:00-3:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">下午 4:00-5:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '</ul>',
+                                '</div>',
+                                '</div>',
+                                '</li>',
+                                '<li class="item-content">',
+                                        '<div class="item-media">',
+
+                                        '</div>',
+                                        '<div class="item-inner item-inner-date">',
+                                        '<div class="date-date">',
+                                        '<div class="date-date-calendar">07-19</div>',
+                                        '<div class="date-date-which">明天</div>',
+                                        '</div>',
+                                        '<div class="date-date-right-container">',
+                                        '<div class="date-date-big-btn-wrapper">',
+                                        '<a href="#" class="date-collapse button button-success button-big">预约</a>',
+                                        '<ul class="date-list date-list-collapse" style="opacity: 0; height: 0;">',
+                                        '<li>',
+                                        '<div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button button-success date-btn">预约</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">上午 9:00-10:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">下午 2:00-3:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">下午 4:00-5:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '</ul>',
+                                '</div>',
+                                '</div>',
+                                '</div>',
+                                '</li>',
+                                '<li class="item-content">',
+                                        '<div class="item-media">',
+
+                                        '</div>',
+                                        '<div class="item-inner item-inner-date">',
+                                        '<div class="date-date">',
+                                        '<div class="date-date-calendar">07-20</div>',
+                                        '<div class="date-date-which">后天</div>',
+                                        '</div>',
+                                        '<div class="date-date-right-container">',
+                                        '<div class="date-date-big-btn-wrapper">',
+                                        '<a href="#" class="date-collapse button disabled button-big">已满</a>',
+                                        '<ul class="date-list date-list-collapse" style="opacity: 0; height: 0;">',
+                                        '<li>',
+                                        '<div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">上午 9:00-10:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">下午 2:00-3:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">下午 4:00-5:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '</ul>',
+                                '</div>',
+                                '</div>',
+                                '</div>',
+                                '</li>',
+                                '</ul>',
+                                '</div>',
+                                '</div>',
+                                '</div>'].join('');
+                },
+                isLoading: false,
+                loadPage: function () {
+                    if(this.isLoading) {
+                        return ;
+                    }
+                    this.isLoading = true;
+                    var start = (this.page - 1) * this.limit + 1;
+                    var end = this.page * this.limit;
+                    var htmlArr = [this.genCard(start)];
+                    for(var i = start + 1; i <= end; ++i) {
+                        htmlArr.push(this.genCard(i));
+                    }
+                    var me = this;
+                    setTimeout(function () {
+                        $('.infinite-scroll-preloader').before(htmlArr.join(''));
+                        ++me.page;
+                        me.isLoading = false;
+                    }, 5000);
+                }
+            };
+            $('.infinite-scroll').scroll(function () {
+                var distance = $(this).data('distance') || 80;
+                if(($(this).scrollTop() + $(this).height()) > ($('.infinite-scroll-preloader')[0].offsetTop - distance)) {
+                    infiniteScrollLoader.loadPage();
+                }
+            });
+            infiniteScrollLoader.loadPage();
         });
     })(Zepto);
 </script>
