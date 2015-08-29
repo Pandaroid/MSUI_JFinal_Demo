@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>QIUZHIBAO</title>
+    <title>培训师</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -347,6 +347,7 @@
         <!-- 加载提示符 -->
         <div class="infinite-scroll-preloader">
             <div class="preloader"></div>
+            <div>一大波培训师正在袭来，请稍候 ...</div>
         </div>
     </div>
 </div>
@@ -679,7 +680,7 @@
                         $('.infinite-scroll-preloader').before(htmlArr.join(''));
                         ++me.page;
                         me.isLoading = false;
-                    }, 5000);
+                    }, 3000);
                 }
             };
             $('.infinite-scroll').scroll(function () {
