@@ -516,21 +516,6 @@
                     dateList.anim({height: '6.6rem', opacity: 1});
                 }
             });
-            /*setTimeout(function () {
-             $.closeModal(modal);
-             }, 5000);*/
-            /*$.ajax({
-                url: 'http://101.200.184.205/index.php/Trainer/get_list',
-                data: {
-
-                },
-                dataType:'jsonp',               //固定值
-                jsonp:'callback',               //值可变，名称随意，但一般设为callback就可以了
-                /!*jsonpCallback:'gdd',            //函数名，名称随意*!/
-                success: function (data) {
-                    console.log(data);
-                }
-            });*/
             //
             var infiniteScrollLoader = {
                 page: 1,
@@ -690,6 +675,8 @@
                 }
             });
             infiniteScrollLoader.loadPage();
+            //
+
         });
     })(Zepto);
 </script>
