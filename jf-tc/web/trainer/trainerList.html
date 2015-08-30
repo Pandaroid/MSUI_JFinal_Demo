@@ -720,7 +720,17 @@
             });
             infiniteScrollLoader.loadPage();
             //
-
+            $.ajax({
+                url: 'http://101.200.176.248/index.php/Trainer/get_list',
+                data: {
+                    token: '1'
+                },
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                }
+            });
         });
     })(Zepto);
 </script>
