@@ -719,18 +719,25 @@
                 }
             });
             infiniteScrollLoader.loadPage();
+            $(document).on('touchend', '.modal-text-input', function() {
+                $(this).parents('.modal').anim({
+                    top: '8rem'
+                });
+            });
             //
-            $.ajax({
+            /*$.ajax({
                 url: 'http://101.200.176.248/index.php/Trainer/get_list',
                 data: {
-                    token: '1'
+                    page: 1,
+                    limit: 10,
+                    token: 'DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D'
                 },
                 type: 'POST',
                 dataType: 'json',
                 success: function (data) {
                     console.log(data);
                 }
-            });
+            });*/
         });
     })(Zepto);
 </script>
