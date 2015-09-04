@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f86e83d6-4273-4da3-9fbc-8735659cd609" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jf-tc/src/com/demo/TrainerController.java" afterPath="$PROJECT_DIR$/jf-tc/src/com/demo/TrainerController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html" afterPath="$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -60,16 +61,16 @@
       <file leaf-file-name="trainerList.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1793313">
-              <caret line="723" column="31" selection-start-line="723" selection-start-column="31" selection-end-line="723" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.27051672">
+              <caret line="694" column="54" selection-start-line="694" selection-start-column="54" selection-end-line="694" selection-end-column="54" />
               <folding>
-                <marker date="1441216215295" expanded="true" signature="18158:18193" placeholder="..." />
-                <marker date="1441216215295" expanded="true" signature="18295:18314" placeholder="..." />
-                <marker date="1441216215295" expanded="true" signature="18422:18441" placeholder="..." />
-                <marker date="1441216215295" expanded="true" signature="18549:18567" placeholder="..." />
-                <marker date="1441216215295" expanded="true" signature="18667:18680" placeholder="..." />
-                <marker date="1441216215295" expanded="true" signature="26581:26623" placeholder="..." />
-                <marker date="1441216215295" expanded="true" signature="29070:29085" placeholder="..." />
+                <marker date="1441330632395" expanded="true" signature="18158:18193" placeholder="..." />
+                <marker date="1441330632395" expanded="true" signature="18295:18314" placeholder="..." />
+                <marker date="1441330632395" expanded="true" signature="18422:18441" placeholder="..." />
+                <marker date="1441330632395" expanded="true" signature="18549:18567" placeholder="..." />
+                <marker date="1441330632395" expanded="true" signature="18667:18680" placeholder="..." />
+                <marker date="1441330632395" expanded="true" signature="26581:26623" placeholder="..." />
+                <marker date="1441330632395" expanded="true" signature="29070:29085" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -78,8 +79,8 @@
       <file leaf-file-name="TrainerController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jf-tc/src/com/demo/TrainerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            <state vertical-scroll-proportion="-5.766667">
+              <caret line="14" column="609" selection-start-line="14" selection-start-column="609" selection-end-line="14" selection-end-column="609" />
               <folding />
             </state>
           </provider>
@@ -152,12 +153,12 @@
         <option value="$PROJECT_DIR$/jf-tc/web/WEB-INF/index.html" />
         <option value="$PROJECT_DIR$/jf-tc/src/com/demo/IndexController.java" />
         <option value="$PROJECT_DIR$/jf-tc/src/com/demo/TabsController.java" />
-        <option value="$PROJECT_DIR$/jf-tc/src/com/demo/TrainerController.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/jf-tc/src/com/demo/DemoConfig.java" />
         <option value="$PROJECT_DIR$/jf-tc/web/tabs/trainer.html" />
         <option value="$PROJECT_DIR$/jf-tc/web/index.html" />
         <option value="$PROJECT_DIR$/jf-tc/web/trainer/trainerList - 副本.html" />
+        <option value="$PROJECT_DIR$/jf-tc/src/com/demo/TrainerController.java" />
         <option value="$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html" />
       </list>
     </option>
@@ -217,7 +218,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -347,6 +347,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -743,12 +744,13 @@
       <workItem from="1440953684998" duration="489000" />
       <workItem from="1441032504182" duration="2090000" />
       <workItem from="1441131688205" duration="97000" />
-      <workItem from="1441213095808" duration="1446000" />
+      <workItem from="1441213095808" duration="9581000" />
+      <workItem from="1441329057621" duration="1566000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76870000" />
+    <option name="totallyTimeSpent" value="86571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1169,34 +1171,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jf-tc/src/com/demo/TabsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jf-tc/src/com/demo/DemoConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jf-tc/src/com/demo/TrainerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1221,18 +1199,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jf-tc/src/com/demo/TabsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jf-tc/src/com/demo/DemoConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jf-tc/src/com/demo/TrainerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.766667">
+          <caret line="14" column="609" selection-start-line="14" selection-start-column="609" selection-end-line="14" selection-end-column="609" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1793313">
-          <caret line="723" column="31" selection-start-line="723" selection-start-column="31" selection-end-line="723" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.27051672">
+          <caret line="694" column="54" selection-start-line="694" selection-start-column="54" selection-end-line="694" selection-end-column="54" />
           <folding>
-            <marker date="1441216215295" expanded="true" signature="18158:18193" placeholder="..." />
-            <marker date="1441216215295" expanded="true" signature="18295:18314" placeholder="..." />
-            <marker date="1441216215295" expanded="true" signature="18422:18441" placeholder="..." />
-            <marker date="1441216215295" expanded="true" signature="18549:18567" placeholder="..." />
-            <marker date="1441216215295" expanded="true" signature="18667:18680" placeholder="..." />
-            <marker date="1441216215295" expanded="true" signature="26581:26623" placeholder="..." />
-            <marker date="1441216215295" expanded="true" signature="29070:29085" placeholder="..." />
+            <marker date="1441330632395" expanded="true" signature="18158:18193" placeholder="..." />
+            <marker date="1441330632395" expanded="true" signature="18295:18314" placeholder="..." />
+            <marker date="1441330632395" expanded="true" signature="18422:18441" placeholder="..." />
+            <marker date="1441330632395" expanded="true" signature="18549:18567" placeholder="..." />
+            <marker date="1441330632395" expanded="true" signature="18667:18680" placeholder="..." />
+            <marker date="1441330632395" expanded="true" signature="26581:26623" placeholder="..." />
+            <marker date="1441330632395" expanded="true" signature="29070:29085" placeholder="..." />
           </folding>
         </state>
       </provider>

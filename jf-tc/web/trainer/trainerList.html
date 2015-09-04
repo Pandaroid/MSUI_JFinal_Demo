@@ -725,19 +725,54 @@
                 });
             });
             //
-            /*$.ajax({
-                url: 'http://101.200.176.248/index.php/Trainer/get_list',
-                data: {
-                    page: 1,
-                    limit: 10,
-                    token: 'DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D'
-                },
-                type: 'POST',
-                dataType: 'json',
-                success: function (data) {
-                    console.log(data);
-                }
-            });*/
+
+            //
+            function getList() {
+                /*$.ajax({
+                    // url: 'http://101.200.176.248/index.php/Trainer/get_list',
+                    url: 'get_list',
+                    data: {
+                        page: 1,
+                        limit: 10,
+                        token: 'DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D'
+                    },
+                    // data: {token: "DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D"},
+                    type: 'POST',
+                    /!*headers: {
+                        "Access-Control-Allow-Origin":"http://example.edu",
+                        "Access-Control-Allow-Headers":"X-Requested-With"
+                    },*!/
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data);
+                    }
+                });*/
+                $.ajax({
+                    type: "post",
+                    // url: 'http://101.200.176.248/index.php/Trainer/get_list',
+                    url: 'get_list',
+                    async: false, // 使用同步方式
+                    // 1 需要使用JSON.stringify 否则格式为 a=2&b=3&now=14...
+                    // 2 需要强制类型转换，否则格式为 {"a":"2","b":"3"}
+                    data: JSON.stringify({
+                        token: 'DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D'
+                    }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(jData) {
+                        if(jData.code < 0) {
+                            alert(jData.desc);
+                            return;
+                        }
+                        var token = jData.token;
+                        var data = jData.data;
+                        console.log(jData);
+                        console.log(data);
+                    } // 注意不要在此行增加逗号
+                });
+            }
+            // getList();
         });
     })(Zepto);
 </script>
