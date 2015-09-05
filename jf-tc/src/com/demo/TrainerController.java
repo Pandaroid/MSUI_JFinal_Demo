@@ -1,6 +1,7 @@
 package com.demo;
 
 import com.jfinal.core.Controller;
+import sun.org.mozilla.javascript.internal.json.JsonParser;
 
 /**
  * Created by Pandaroid on 2015/8/26.
@@ -8,6 +9,14 @@ import com.jfinal.core.Controller;
 public class TrainerController extends Controller {
     public void trainerList() {
         render("trainerList.html");
+    }
+
+    public void cancel_appoint() {
+        renderJson("{\"code\": 0}");
+    }
+
+    public void appoint() {
+        renderJson("{\"code\": 0}");
     }
 
     public void get_list() {

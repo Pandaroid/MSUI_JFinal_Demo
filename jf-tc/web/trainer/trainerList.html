@@ -399,17 +399,55 @@
         $(function() {
             //
             $(document).on('click', '.date-btn', function () {
+                var $me = $(this);
+                $me.addClass('dating');
+                var trainer_time_id = $me.attr('data-trainer-time-id');
+                var trainer_id = $me.attr('data-trainer-id');
+                if($me.hasClass('dated')) {
+                    $.confirm('确定要取消预约？', function () {
+                        var trainerTimeId = $me.attr('data-trainer-time-id');
+                        var trainerId = $me.attr('data-trainer-id');
+                        $.ajax({
+                            type: "post",
+                            // url: 'http://101.200.176.248/index.php/Trainer/cancel_appoint',
+                            url: 'cancel_appoint',
+                            async: false, // 使用同步方式
+                            // 1 需要使用JSON.stringify 否则格式为 a=2&b=3&now=14...
+                            // 2 需要强制类型转换，否则格式为 {"a":"2","b":"3"}
+                            data: JSON.stringify({
+                                token: infiniteScrollLoader.token,
+                                trainer_id: trainerId,
+                                trainer_time_id: trainerTimeId
+                            }),
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function(jData) {
+                                if(jData.code != 0) {
+                                    $.alert('取消预约失败');
+                                    $('.date-btn.dating').removeClass('dating');
+                                    return;
+                                }
+                                $me.text('取消预约成功');
+                                $('.date-btn.dating').text('预约').removeClass('dating').removeClass('dated');
+                                $.closeModal();
+                                $.alert('取消预约成功');
+                            } // 注意不要在此行增加逗号
+                        });
+                    });
+                    return ;
+                }
                 /*$.prompt('培训师会在约定时间与您联系', function (value) {
                     $.alert('您输入的是 “' + value + '”。');
                 });
                 $('.modal-text-input').attr('placeholder', '请输入您的电话号码');*/
+                var dataStr = ['data-trainer-time-id="', trainer_time_id, '" data-trainer-id="', trainer_id, '"'].join('');
                 $.modal({
-                    text:   '<div style="text-align: left; font-size: .6rem;">培训师会在约定时间与您联系<span class="modal-close">×</span></div>'
-                            + '<input style="margin-top: .57rem;" placeholder="请输入您的姓名" type="text" class="modal-text-input">'
-                            + '<input style="margin-top: .54rem;" placeholder="请输入您的电话号码" type="text" class="modal-text-input">'
-                            + '<div style="margin-top: .7rem;" class="row">'
-                                +  '<div class="col-100"><a id="date-submit" style="height: auto;" href="#" class="button button-big button-success">确定</a></div>'
-                            + '</div>'
+                    text:   ['<div style="text-align: left; font-size: .6rem;">培训师会在约定时间与您联系<span class="modal-close">×</span></div>',
+                            '<input id="ds-name" style="margin-top: .57rem;" placeholder="请输入您的姓名" type="text" class="modal-text-input">',
+                            '<input id="ds-phone" style="margin-top: .54rem;" placeholder="请输入您的电话号码" type="text" class="modal-text-input">',
+                            '<div style="margin-top: .7rem;" class="row">',
+                                '<div class="col-100"><a id="date-submit" ', dataStr,' style="height: auto;" href="#" class="button button-big button-success">确定</a></div>',
+                            '</div>'].join('')
                 });
             });
             //
@@ -534,7 +572,39 @@
             })(Zepto);
             //
             $(document).on('click', '#date-submit', function () {
-                $.closeModal();
+                var $me = $(this);
+                $me.text('预约中 ...');
+                var trainerTimeId = $me.attr('data-trainer-time-id');
+                var trainerId = $me.attr('data-trainer-id');
+                $.ajax({
+                    type: "post",
+                    // url: 'http://101.200.176.248/index.php/Trainer/appoint',
+                    url: 'appoint',
+                    async: false, // 使用同步方式
+                    // 1 需要使用JSON.stringify 否则格式为 a=2&b=3&now=14...
+                    // 2 需要强制类型转换，否则格式为 {"a":"2","b":"3"}
+                    data: JSON.stringify({
+                        token: infiniteScrollLoader.token,
+                        trainer_id: trainerId,
+                        trainer_time_id: trainerTimeId,
+                        name: $('#ds-name').val(),
+                        phone: $('#ds-phone').val()
+                    }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(jData) {
+                        if(jData.code != 0) {
+                            alert('预约失败');
+                            $me.text('预约失败 ...');
+                            $('.date-btn.dating').removeClass('dating');
+                            return;
+                        }
+                        $me.text('预约成功');
+                        $('.date-btn.dating').text('已预约').removeClass('dating').addClass('dated');
+                        $.closeModal();
+                        $.alert('预约成功');
+                    } // 注意不要在此行增加逗号
+                });
             }).on('click', '.modal-close', function () {
                 $.closeModal();
             }).on('click', '.date-collapse', function() {
@@ -586,17 +656,19 @@
                     }
                     return cBtn;
                 },
-                genListBtn: function (isAppoint) {
+                genListBtn: function (isAppoint, trainer_time_id, trainer_id) {
+                    var dataStr = ['data-trainer-time-id="', trainer_time_id, '" data-trainer-id="', trainer_id, '"'].join('');
+                    //
                     var cBtn;
                     switch (isAppoint) {
                         case 0: // 可预约
-                            cBtn = '<a href="#" class="button button-success date-btn">预约</a>';
+                            cBtn = ['<a href="#" class="button button-success date-btn" ', dataStr, '>预约</a>'].join('');
                             break;
                         case 1: // 已预约
-                            cBtn = '<a href="#" class="button button-success date-btn">已预约</a>';
+                            cBtn = ['<a href="#" class="button button-success date-btn dated" ', dataStr, '>已预约</a>'].join('');
                             break;
                         default:    // 已满
-                            cBtn = '<a href="#" class="button disabled">已满</a>';
+                            cBtn = ['<a href="#" class="button disabled" ', dataStr, '>已满</a>'].join('');
                     }
                     return cBtn;
                 },
@@ -638,7 +710,7 @@
                                 dateLiArr.push('<li>',
                                         '<div class="date-list-item-time">', me.judgeMorningOrAfternoon(startTime),
                                         me.parse12(startTime),'-', me.parse12(new Date(curDate.endtime * 1000).format('HH:mm')),'</div>',
-                                        '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint),'</div>',
+                                        '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint, curDate.id, curDate.trainer_id),'</div>',
                                         '</li>');
                             }
                             var dataHeight = [1.7 * dateLiArr.length / 10, 'rem'].join('');
@@ -690,7 +762,7 @@
                                 dateLiArr.push('<li>',
                                         '<div class="date-list-item-time">', me.judgeMorningOrAfternoon(startTime),
                                         me.parse12(startTime),'-', me.parse12(new Date(curDate.endtime * 1000).format('HH:mm')),'</div>',
-                                        '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint),'</div>',
+                                        '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint, curDate.id, curDate.trainer_id),'</div>',
                                         '</li>');
                             }
                             var dataHeight = [1.7 * dateLiArr.length / 10, 'rem'].join('');
@@ -743,7 +815,7 @@
                                 dateLiArr.push('<li>',
                                         '<div class="date-list-item-time">', me.judgeMorningOrAfternoon(startTime),
                                         me.parse12(startTime),'-', me.parse12(new Date(curDate.endtime * 1000).format('HH:mm')),'</div>',
-                                        '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint),'</div>',
+                                        '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint, curDate.id, curDate.trainer_id),'</div>',
                                         '</li>');
                             }
                             var dataHeight = [1.7 * dateLiArr.length / 10, 'rem'].join('');
@@ -818,6 +890,7 @@
                                 '</div>'].join('');
                 },
                 isLoading: false,
+                token: 'DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D',
                 loadPage: function () {
                     if(this.isLoading) {
                         return ;
@@ -833,7 +906,7 @@
                         // 1 需要使用JSON.stringify 否则格式为 a=2&b=3&now=14...
                         // 2 需要强制类型转换，否则格式为 {"a":"2","b":"3"}
                         data: JSON.stringify({
-                            token: 'DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D',
+                            token: me.token,
                             page: me.page,
                             limit: me.limit
                         }),
@@ -845,7 +918,7 @@
                                 return;
                             }
                             // ++me.page;
-                            var token = jData.token;
+                            me.token = jData.token;
                             var trainerArr = jData.data;
                             console.log(jData);
                             console.log(trainerArr);
