@@ -49,7 +49,7 @@
         }
         .item-media { position: absolute; }
         .list-block .item-media + .item-inner {
-            margin-left: 5.6rem;
+            margin-left: 5rem;
             padding-right: 1.9rem;
         }
         .list-block .item-subtitle { font-weight: bold; }
@@ -67,7 +67,7 @@
         }
 
         .list-block .item-content {
-            padding-left: 1.3rem;
+            padding-left: .9rem;
         }
         .list-block .item-content-top {
             min-height: 7.32rem;
@@ -246,6 +246,11 @@
 <body>
 <div class="page page-current" id='trainerList'>
     <div class="content infinite-scroll pull-to-refresh-content" data-ptr-distance="55" data-distance="100">
+        <!-- 默认的下拉刷新层 -->
+        <div class="pull-to-refresh-layer">
+            <div class="preloader"></div>
+            <div class="pull-to-refresh-arrow"></div>
+        </div>
         <div class="content-inner">
 
             <!-- 这里是页面内容区 -->
@@ -433,7 +438,8 @@
                                     return;
                                 }
                                 $me.text('取消预约成功');
-                                $('.date-btn.dating').text('预约').removeClass('dating').removeClass('dated');
+                                var datingBtn = $('.date-btn.dating').text('预约').removeClass('dating').removeClass('dated');
+                                datingBtn.parents('.date-date-big-btn-wrapper').find('.date-collapse').removeClass('disabled').addClass('button-success').html('预 &nbsp;  &nbsp; 约');
                                 $.closeModal();
                                 $.toast(jData.desc);
                             } // 注意不要在此行增加逗号
@@ -625,10 +631,17 @@
                             return;
                         }
                         $me.text('预约成功');
-                        $('.date-btn.dating').text('已预约').removeClass('dating').addClass('dated');
+                        var datingBtn = $('.date-btn.dating').text('已预约').removeClass('dating').addClass('dated');
                         $.closeModal();
                         // $.alert('预约成功');
                         $.toast(jData.desc);
+                        //
+                        var dcBtn = datingBtn.parents('.date-date-big-btn-wrapper');
+                        var dBtns = dcBtn.find('.date-btn');
+                        var ddBtns = dcBtn.find('.date-btn.dated');
+                        if(dBtns && ddBtns && dBtns.length <= ddBtns.length) {
+                            dcBtn.find('.date-collapse').removeClass('button-success').addClass('disabled').html('已 &nbsp;  &nbsp; 满');
+                        }
                     } // 注意不要在此行增加逗号
                 });
             }).on('click', '.modal-close', function () {
@@ -663,6 +676,12 @@
                     'ss': s.pad2(),'s': s
                 };
                 return format.replace(/([a-zA-Z]+)/g,function (s,$1) { return n[$1]; });
+            }
+            //
+            function getQueryString(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]); return null;
             }
             //
             var infiniteScrollLoader = {
@@ -700,12 +719,12 @@
                 },
                 judgeMorningOrAfternoon: function (startTime) {
                     var preArr = startTime.split(':');
-                    return (preArr[0] - 12 >= 0) ? '下午 ' : '上午 ';
+                    return (preArr[0] - 12 >= 0) ? '下午' : '上午';
                 },
                 parse12: function (timeStr) {
                     var timeStrArr = timeStr.split(':');
                     var hour = timeStrArr[0];
-                    return [(hour > 12) ? (hour - 12) : hour, timeStrArr[1]].join(':');
+                    return [(hour > 12) ? (hour - 12) : (hour - 0), timeStrArr[1]].join(':');
                 },
                 genCard: function (curTrainer) {
                     var me = this;
@@ -916,7 +935,7 @@
                                 '</div>'].join('');
                 },
                 isLoading: false,
-                token: window.location.href.split('?token=')[1] || 'DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D',
+                token: getQueryString('token'),
                 loadPage: function () {
                     if(this.isLoading) {
                         return ;
