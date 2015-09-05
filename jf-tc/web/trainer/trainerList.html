@@ -54,10 +54,9 @@
         }
         .list-block .item-subtitle { font-weight: bold; }
         .list-block, .list-block .item-subtitle { font-size: .92rem; }
-        .list-block.media-list .item-media, .list-block li.media-item .item-media { padding-top: .6rem; }
+        .list-block.media-list .item-media, .list-block li.media-item .item-media { padding-top: .6rem; padding-right: 1rem; }
         .item-title-row {
             margin-bottom: .2rem;
-            padding-right: 1rem;
         }
         .item-description {
             color: #989898;
@@ -246,8 +245,9 @@
 </head>
 <body>
 <div class="page page-current" id='trainerList'>
-    <div class="content infinite-scroll" data-distance="100">
+    <div class="content infinite-scroll pull-to-refresh-content" data-ptr-distance="55" data-distance="100">
         <div class="content-inner">
+
             <!-- 这里是页面内容区 -->
             <!--<div class="card">
                 <div class="card-content">
@@ -427,14 +427,15 @@
                             dataType: "json",
                             success: function(jData) {
                                 if(jData.code != 0) {
-                                    $.alert('取消预约失败');
+                                    // $.toast('取消预约失败');
+                                    $.toast(jData.desc);
                                     $('.date-btn.dating').removeClass('dating');
                                     return;
                                 }
                                 $me.text('取消预约成功');
                                 $('.date-btn.dating').text('预约').removeClass('dating').removeClass('dated');
                                 $.closeModal();
-                                $.alert('取消预约成功');
+                                $.toast(jData.desc);
                             } // 注意不要在此行增加逗号
                         });
                     });
@@ -584,17 +585,17 @@
                 var name = $('#ds-name').val();
                 var phone = $('#ds-phone').val();
                 if(!name || name == '') {
-                    $.alert('您还未输入姓名');
+                    $.toast('您还未输入姓名');
                     $me.text('确定');
                     return;
                 }
                 if(!phone || phone == '') {
-                    $.alert('您还未输入电话号码');
+                    $.toast('您还未输入电话号码');
                     $me.text('确定');
                     return;
                 }
                 if(!/((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)/g.test(phone)) {
-                    $.alert('您输入的电话号码有误，请检查');
+                    $.toast('您输入的电话号码有误，请检查');
                     $me.text('确定');
                     return;
                 }
@@ -617,15 +618,17 @@
                     dataType: "json",
                     success: function(jData) {
                         if(jData.code != 0) {
-                            $.alert('预约失败');
-                            $me.text('预约失败 ...');
+                            // $.alert('预约失败');
+                            $.toast(jData.desc);
+                            // $me.text('预约失败 ...');
                             $('.date-btn.dating').removeClass('dating');
                             return;
                         }
                         $me.text('预约成功');
                         $('.date-btn.dating').text('已预约').removeClass('dating').addClass('dated');
                         $.closeModal();
-                        $.alert('预约成功');
+                        // $.alert('预约成功');
+                        $.toast(jData.desc);
                     } // 注意不要在此行增加逗号
                 });
             }).on('click', '.modal-close', function () {
@@ -913,7 +916,7 @@
                                 '</div>'].join('');
                 },
                 isLoading: false,
-                token: 'DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D',
+                token: window.location.href.split('?token=')[1] || 'DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D',
                 loadPage: function () {
                     if(this.isLoading) {
                         return ;
