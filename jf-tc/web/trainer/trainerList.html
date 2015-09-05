@@ -600,6 +600,15 @@
                     }
                     return cBtn;
                 },
+                judgeMorningOrAfternoon: function (startTime) {
+                    var preArr = startTime.split(':');
+                    return (preArr[0] - 12 > 0) ? '下午 ' : '上午 ';
+                },
+                parse12: function (timeStr) {
+                    var timeStrArr = timeStr.split(':');
+                    var hour = timeStrArr[0];
+                    return [(hour > 12) ? (hour - 12) : hour, timeStrArr[1]].join(':');
+                },
                 genCard: function (curTrainer) {
                     var me = this;
                     var appoint_time = curTrainer.appoint_time;
@@ -625,10 +634,10 @@
                             var dateLiArr = [];
                             for(var idx in info) {
                                 var curDate = info[idx];
-                                console.log('curDate.starttime: ' + curDate.starttime);
+                                var startTime = new Date(curDate.starttime * 1000).format('HH:mm');
                                 dateLiArr.push('<li>',
-                                        '<div class="date-list-item-time">',
-                                        new Date(curDate.starttime * 1000).format('HH:mm'),'-', new Date(curDate.endtime * 1000).format('HH:mm'),'</div>',
+                                        '<div class="date-list-item-time">', me.judgeMorningOrAfternoon(startTime),
+                                        me.parse12(startTime),'-', me.parse12(new Date(curDate.endtime * 1000).format('HH:mm')),'</div>',
                                         '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint),'</div>',
                                         '</li>');
                             }
@@ -677,9 +686,10 @@
                             var dateLiArr = [];
                             for(var idx in info) {
                                 var curDate = info[idx];
+                                var startTime = new Date(curDate.starttime * 1000).format('HH:mm');
                                 dateLiArr.push('<li>',
-                                        '<div class="date-list-item-time">',
-                                        new Date(curDate.starttime * 1000).format('HH:mm'),'-', new Date(curDate.endtime * 1000).format('HH:mm'),'</div>',
+                                        '<div class="date-list-item-time">', me.judgeMorningOrAfternoon(startTime),
+                                        me.parse12(startTime),'-', me.parse12(new Date(curDate.endtime * 1000).format('HH:mm')),'</div>',
                                         '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint),'</div>',
                                         '</li>');
                             }
@@ -729,9 +739,10 @@
                             var dateLiArr = [];
                             for(var idx in info) {
                                 var curDate = info[idx];
+                                var startTime = new Date(curDate.starttime * 1000).format('HH:mm');
                                 dateLiArr.push('<li>',
-                                        '<div class="date-list-item-time">',
-                                        new Date(curDate.starttime * 1000).format('HH:mm'),'-', new Date(curDate.endtime * 1000).format('HH:mm'),'</div>',
+                                        '<div class="date-list-item-time">', me.judgeMorningOrAfternoon(startTime),
+                                        me.parse12(startTime),'-', me.parse12(new Date(curDate.endtime * 1000).format('HH:mm')),'</div>',
                                         '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint),'</div>',
                                         '</li>');
                             }
