@@ -546,7 +546,7 @@
                     dateList.anim({height: 0}, animDuration);
                     // dateList.css('height', 0).css('transform', 'scale(1, 0)').css('opacity', 0);
                 } else {
-                    dateList.anim({height: '6.6rem'}, animDuration);
+                    dateList.anim({height: thisDateCollapse.next('.date-list-collapse').data('height')}, animDuration);
                     // dateList.css('height', '6.6rem').css('transform', 'scale(1, 1)').css('opacity', 1);
                 }
             });
@@ -632,6 +632,7 @@
                                         '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint),'</div>',
                                         '</li>');
                             }
+                            var dataHeight = [1.7 * dateLiArr.length / 10, 'rem'].join('');
                             //
                             todayLi = ['<li class="item-content">',
                                 '<div class="item-media">',
@@ -645,7 +646,7 @@
                                 '</div>',
                                 '<div class="date-date-right-container">',
                                 me.genCollapseBtn(appointTimeToday['isappoint']),
-                                '<ul class="date-list date-list-collapse" style="height: 6.6rem;">',
+                                '<ul class="date-list date-list-collapse" data-height="', dataHeight,'" style="height: ', dataHeight, ';">',
                                 dateLiArr.join(''),
                                 /*'<li>',
                                 '<div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>',
@@ -682,6 +683,7 @@
                                         '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint),'</div>',
                                         '</li>');
                             }
+                            var dataHeight = [1.7 * dateLiArr.length / 10, 'rem'].join('');
                             //
                             tomorrowLi = ['<li class="item-content">',
                                 '<div class="item-media">',
@@ -695,7 +697,7 @@
                                 '<div class="date-date-right-container">',
                                 '<div class="date-date-big-btn-wrapper">',
                                 me.genCollapseBtn(appointTimeTomorrow['isappoint']),
-                                '<ul class="date-list date-list-collapse">',
+                                '<ul class="date-list date-list-collapse" data-height="', dataHeight,'">',
                                 dateLiArr.join(''),
                                 /*'<li>',
                                 '<div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>',
@@ -733,6 +735,7 @@
                                         '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint),'</div>',
                                         '</li>');
                             }
+                            var dataHeight = [1.7 * dateLiArr.length / 10, 'rem'].join('');
                             //
                             theDayAfterTomorrowLi = ['<li class="item-content">',
                                 '<div class="item-media">',
@@ -746,7 +749,7 @@
                                 '<div class="date-date-right-container">',
                                 '<div class="date-date-big-btn-wrapper">',
                                 me.genCollapseBtn(appointTimeTheDayAfterTomorrow['isappoint']),
-                                '<ul class="date-list date-list-collapse">',
+                                '<ul class="date-list date-list-collapse" data-height="', dataHeight,'">',
                                 dateLiArr.join(''),
                                 /*'<li>',
                                 '<div class="date-list-item-time">上午 8:00-9:00</div>',
@@ -891,8 +894,8 @@
             //
 
             //
-            function getList() {
-                /*$.ajax({
+            /*function getList() {
+                /!*$.ajax({
                     // url: 'http://101.200.176.248/index.php/Trainer/get_list',
                     url: 'get_list',
                     data: {
@@ -911,7 +914,7 @@
                     success: function (data) {
                         console.log(data);
                     }
-                });*/
+                });*!/
                 $.ajax({
                     type: "post",
                     // url: 'http://101.200.176.248/index.php/Trainer/get_list',
@@ -935,7 +938,7 @@
                         console.log(data);
                     } // 注意不要在此行增加逗号
                 });
-            }
+            }*/
             // getList();
         });
     })(Zepto);
