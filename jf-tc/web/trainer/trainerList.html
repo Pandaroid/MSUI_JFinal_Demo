@@ -572,7 +572,36 @@
             var infiniteScrollLoader = {
                 page: 1,
                 limit: 3,
+                genCollapseBtn: function (isAppoint) {
+                    var cBtn;
+                    switch (isAppoint) {
+                        case 0: // 可预约
+                            cBtn = '<a href="#" class="date-collapse button button-success button-big">预约</a>';
+                            break;
+                        case 1: // 已预约
+                            cBtn = '<a href="#" class="date-collapse button button-success button-big">已预约</a>';
+                            break;
+                        default:    // 已满
+                            cBtn = '<a href="#" class="date-collapse button disabled button-big">已满</a>';
+                    }
+                    return cBtn;
+                },
+                genListBtn: function (isAppoint) {
+                    var cBtn;
+                    switch (isAppoint) {
+                        case 0: // 可预约
+                            cBtn = '<a href="#" class="button button-success date-btn">预约</a>';
+                            break;
+                        case 1: // 已预约
+                            cBtn = '<a href="#" class="button button-success date-btn">已预约</a>';
+                            break;
+                        default:    // 已满
+                            cBtn = '<a href="#" class="button disabled">已满</a>';
+                    }
+                    return cBtn;
+                },
                 genCard: function (curTrainer) {
+                    var me = this;
                     var appoint_time = curTrainer.appoint_time;
                     var today = new Date();
                     var todayKey = today.format('MM-dd');
@@ -586,10 +615,25 @@
                     console.log('theDayAfterTomorrowKey: ' + theDayAfterTomorrowKey);
                     //
                     var todayLi = '';
+                    var tomorrowLi = '';
+                    var theDayAfterTomorrowLi = '';
                     if(appoint_time) {
                         if(appoint_time[todayKey]) {
-                            todayLi = [
-                                '<li class="item-content">',
+                            var appointTimeToday = appoint_time[todayKey];
+                            //
+                            var info = appointTimeToday['info'];
+                            var dateLiArr = [];
+                            for(var idx in info) {
+                                var curDate = info[idx];
+                                console.log('curDate.starttime: ' + curDate.starttime);
+                                dateLiArr.push('<li>',
+                                        '<div class="date-list-item-time">',
+                                        new Date(curDate.starttime * 1000).format('HH:mm'),'-', new Date(curDate.endtime * 1000).format('HH:mm'),'</div>',
+                                        '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint),'</div>',
+                                        '</li>');
+                            }
+                            //
+                            todayLi = ['<li class="item-content">',
                                 '<div class="item-media">',
 
                                 '</div>',
@@ -600,9 +644,10 @@
                                 '<div class="date-date-which">今天</div>',
                                 '</div>',
                                 '<div class="date-date-right-container">',
-                                '<a href="#" class="date-collapse button button-success button-big">预约</a>',
+                                me.genCollapseBtn(appointTimeToday['isappoint']),
                                 '<ul class="date-list date-list-collapse" style="height: 6.6rem;">',
-                                '<li>',
+                                dateLiArr.join(''),
+                                /*'<li>',
                                 '<div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>',
                                 '<div class="date-list-item-btn-div"><a href="#" class="button button-success date-btn">预约</a></div>',
                                 '</li>',
@@ -617,14 +662,111 @@
                                 '<li>',
                                 '<div class="date-list-item-time">下午 4:00-5:00</div>',
                                 '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
+                                '</li>',*/
                                 '</ul>',
                                 '</div>',
                                 '</div>',
                                 '</li>',
                             ].join('');
                         }
+                        if(appoint_time[tomorrowKey]) {
+                            var appointTimeTomorrow = appoint_time[tomorrowKey];
+                            //
+                            var info = appointTimeTomorrow['info'];
+                            var dateLiArr = [];
+                            for(var idx in info) {
+                                var curDate = info[idx];
+                                dateLiArr.push('<li>',
+                                        '<div class="date-list-item-time">',
+                                        new Date(curDate.starttime * 1000).format('HH:mm'),'-', new Date(curDate.endtime * 1000).format('HH:mm'),'</div>',
+                                        '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint),'</div>',
+                                        '</li>');
+                            }
+                            //
+                            tomorrowLi = ['<li class="item-content">',
+                                '<div class="item-media">',
 
+                                '</div>',
+                                '<div class="item-inner item-inner-date">',
+                                '<div class="date-date">',
+                                '<div class="date-date-calendar">07-19</div>',
+                                '<div class="date-date-which">明天</div>',
+                                '</div>',
+                                '<div class="date-date-right-container">',
+                                '<div class="date-date-big-btn-wrapper">',
+                                me.genCollapseBtn(appointTimeTomorrow['isappoint']),
+                                '<ul class="date-list date-list-collapse">',
+                                dateLiArr.join(''),
+                                /*'<li>',
+                                '<div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button button-success date-btn">预约</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">上午 9:00-10:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">下午 2:00-3:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">下午 4:00-5:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',*/
+                                '</ul>',
+                                '</div>',
+                                '</div>',
+                                '</div>',
+                                '</li>'
+                            ].join('');
+                        }
+                        if(appoint_time[theDayAfterTomorrowKey]) {
+                            var appointTimeTheDayAfterTomorrow = appoint_time[theDayAfterTomorrowKey];
+                            //
+                            var info = appointTimeTheDayAfterTomorrow['info'];
+                            var dateLiArr = [];
+                            for(var idx in info) {
+                                var curDate = info[idx];
+                                dateLiArr.push('<li>',
+                                        '<div class="date-list-item-time">',
+                                        new Date(curDate.starttime * 1000).format('HH:mm'),'-', new Date(curDate.endtime * 1000).format('HH:mm'),'</div>',
+                                        '<div class="date-list-item-btn-div">', me.genListBtn(curDate.isappoint),'</div>',
+                                        '</li>');
+                            }
+                            //
+                            theDayAfterTomorrowLi = ['<li class="item-content">',
+                                '<div class="item-media">',
+
+                                '</div>',
+                                '<div class="item-inner item-inner-date">',
+                                '<div class="date-date">',
+                                '<div class="date-date-calendar">07-20</div>',
+                                '<div class="date-date-which">后天</div>',
+                                '</div>',
+                                '<div class="date-date-right-container">',
+                                '<div class="date-date-big-btn-wrapper">',
+                                me.genCollapseBtn(appointTimeTheDayAfterTomorrow['isappoint']),
+                                '<ul class="date-list date-list-collapse">',
+                                dateLiArr.join(''),
+                                /*'<li>',
+                                '<div class="date-list-item-time">上午 8:00-9:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">上午 9:00-10:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">下午 2:00-3:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',
+                                '<li>',
+                                '<div class="date-list-item-time">下午 4:00-5:00</div>',
+                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                '</li>',*/
+                                '</ul>'
+                            ].join('');
+                        }
                     }
                     //
                     return ['<div data-id="', curTrainer.id,'" style="opacity: 0; transform: translate(0, 25rem)" class="card">',
@@ -650,70 +792,8 @@
                                 '</div>',
                                 '</li>',
                                 todayLi,
-                                '<li class="item-content">',
-                                        '<div class="item-media">',
-
-                                        '</div>',
-                                        '<div class="item-inner item-inner-date">',
-                                        '<div class="date-date">',
-                                        '<div class="date-date-calendar">07-19</div>',
-                                        '<div class="date-date-which">明天</div>',
-                                        '</div>',
-                                        '<div class="date-date-right-container">',
-                                        '<div class="date-date-big-btn-wrapper">',
-                                        '<a href="#" class="date-collapse button button-success button-big">预约</a>',
-                                        '<ul class="date-list date-list-collapse">',
-                                        '<li>',
-                                        '<div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button button-success date-btn">预约</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">上午 9:00-10:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">下午 2:00-3:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">下午 4:00-5:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
-                                '</ul>',
-                                '</div>',
-                                '</div>',
-                                '</div>',
-                                '</li>',
-                                '<li class="item-content">',
-                                        '<div class="item-media">',
-
-                                        '</div>',
-                                        '<div class="item-inner item-inner-date">',
-                                        '<div class="date-date">',
-                                        '<div class="date-date-calendar">07-20</div>',
-                                        '<div class="date-date-which">后天</div>',
-                                        '</div>',
-                                        '<div class="date-date-right-container">',
-                                        '<div class="date-date-big-btn-wrapper">',
-                                        '<a href="#" class="date-collapse button disabled button-big">已满</a>',
-                                        '<ul class="date-list date-list-collapse">',
-                                        '<li>',
-                                        '<div class="date-list-item-time">上午 8:00-9:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">上午 9:00-10:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">下午 2:00-3:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">下午 4:00-5:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
-                                '</ul>',
+                                tomorrowLi,
+                                theDayAfterTomorrowLi,
                                 '</div>',
                                 '</div>',
                                 '</div>',
