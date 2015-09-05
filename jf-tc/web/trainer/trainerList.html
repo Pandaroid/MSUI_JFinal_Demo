@@ -57,6 +57,7 @@
         .list-block.media-list .item-media, .list-block li.media-item .item-media { padding-top: .6rem; }
         .item-title-row {
             margin-bottom: .2rem;
+            padding-right: 1rem;
         }
         .item-description {
             color: #989898;
@@ -237,6 +238,9 @@
             -ms-transition: all 2s;
             -o-transition: all 2s;
             transition: all 2s;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
         }
     </style>
 </head>
@@ -375,7 +379,7 @@
             <!-- 加载提示符 -->
             <div class="infinite-scroll-preloader">
                 <div class="preloader"></div>
-                <div>一大波培训师正在袭来，请稍候 ...</div>
+                <div class="preloader-text">一大波培训师正在袭来，请稍候 ...</div>
             </div>
         </div>
     </div>
@@ -409,8 +413,8 @@
                         var trainerId = $me.attr('data-trainer-id');
                         $.ajax({
                             type: "post",
-                            // url: 'http://101.200.176.248/index.php/Trainer/cancel_appoint',
-                            url: 'cancel_appoint',
+                            url: '/index.php/Trainer/cancel_appoint',
+                            // url: 'cancel_appoint',
                             async: false, // 使用同步方式
                             // 1 需要使用JSON.stringify 否则格式为 a=2&b=3&now=14...
                             // 2 需要强制类型转换，否则格式为 {"a":"2","b":"3"}
@@ -576,10 +580,29 @@
                 $me.text('预约中 ...');
                 var trainerTimeId = $me.attr('data-trainer-time-id');
                 var trainerId = $me.attr('data-trainer-id');
+                //
+                var name = $('#ds-name').val();
+                var phone = $('#ds-phone').val();
+                if(!name || name == '') {
+                    $.alert('您还未输入姓名');
+                    $me.text('确定');
+                    return;
+                }
+                if(!phone || phone == '') {
+                    $.alert('您还未输入电话号码');
+                    $me.text('确定');
+                    return;
+                }
+                if(!/((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)/g.test(phone)) {
+                    $.alert('您输入的电话号码有误，请检查');
+                    $me.text('确定');
+                    return;
+                }
+                //
                 $.ajax({
                     type: "post",
-                    // url: 'http://101.200.176.248/index.php/Trainer/appoint',
-                    url: 'appoint',
+                    url: '/index.php/Trainer/appoint',
+                    // url: 'appoint',
                     async: false, // 使用同步方式
                     // 1 需要使用JSON.stringify 否则格式为 a=2&b=3&now=14...
                     // 2 需要强制类型转换，否则格式为 {"a":"2","b":"3"}
@@ -587,14 +610,14 @@
                         token: infiniteScrollLoader.token,
                         trainer_id: trainerId,
                         trainer_time_id: trainerTimeId,
-                        name: $('#ds-name').val(),
-                        phone: $('#ds-phone').val()
+                        name: name,
+                        phone: phone
                     }),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function(jData) {
                         if(jData.code != 0) {
-                            alert('预约失败');
+                            $.alert('预约失败');
                             $me.text('预约失败 ...');
                             $('.date-btn.dating').removeClass('dating');
                             return;
@@ -646,13 +669,13 @@
                     var cBtn;
                     switch (isAppoint) {
                         case 0: // 可预约
-                            cBtn = '<a href="#" class="date-collapse button button-success button-big">预约</a>';
+                            cBtn = '<a href="#" class="date-collapse button button-success button-big">预 &nbsp;  &nbsp; 约</a>';
                             break;
                         case 1: // 已预约
-                            cBtn = '<a href="#" class="date-collapse button button-success button-big">已预约</a>';
+                            cBtn = '<a href="#" class="date-collapse button button-success button-big">已 &nbsp;  &nbsp; 预 &nbsp;  &nbsp; 约</a>';
                             break;
                         default:    // 已满
-                            cBtn = '<a href="#" class="date-collapse button disabled button-big">已满</a>';
+                            cBtn = '<a href="#" class="date-collapse button disabled button-big">已 &nbsp;  &nbsp; 满</a>';
                     }
                     return cBtn;
                 },
@@ -674,7 +697,7 @@
                 },
                 judgeMorningOrAfternoon: function (startTime) {
                     var preArr = startTime.split(':');
-                    return (preArr[0] - 12 > 0) ? '下午 ' : '上午 ';
+                    return (preArr[0] - 12 >= 0) ? '下午 ' : '上午 ';
                 },
                 parse12: function (timeStr) {
                     var timeStrArr = timeStr.split(':');
@@ -686,14 +709,14 @@
                     var appoint_time = curTrainer.appoint_time;
                     var today = new Date();
                     var todayKey = today.format('MM-dd');
-                    console.log('todayKey: ' + todayKey);
+                    // console.log('todayKey: ' + todayKey);
                     // var tomorrow = new Date();
                     today.setDate(today.getDate() + 1);    // dd.setDate(dd.getDate()+AddDayCount)
                     var tomorrowKey = today.format('MM-dd');
-                    console.log('tomorrowKey: ' + tomorrowKey);
+                    // console.log('tomorrowKey: ' + tomorrowKey);
                     today.setDate(today.getDate() + 1);
                     var theDayAfterTomorrowKey = today.format('MM-dd');
-                    console.log('theDayAfterTomorrowKey: ' + theDayAfterTomorrowKey);
+                    // console.log('theDayAfterTomorrowKey: ' + theDayAfterTomorrowKey);
                     //
                     var todayLi = '';
                     var tomorrowLi = '';
@@ -864,7 +887,7 @@
                                         '<img class="avatar" src="', curTrainer.avatar,'">',
                                         '<div class="item-price">',
                                         '<div class="item-price-free">', (curTrainer.currentprice <= 0) ? '限时免费' : (curTrainer.currentprice + '元'),'</div>',
-                                        '<div class="item-price-per">', curTrainer.originprice,'元 / 小时</div>',
+                                        '<div class="item-price-per">', curTrainer.originprice,'元/小时</div>',
                                         '</div>',
                                         '</div>',
                                         '<div class="item-inner">',
@@ -900,8 +923,8 @@
                     var me = this;
                     $.ajax({
                         type: "post",
-                        // url: 'http://101.200.176.248/index.php/Trainer/get_list',
-                        url: 'get_list',
+                        url: '/index.php/Trainer/get_list',
+                        // url: 'get_list',
                         async: false, // 使用同步方式
                         // 1 需要使用JSON.stringify 否则格式为 a=2&b=3&now=14...
                         // 2 需要强制类型转换，否则格式为 {"a":"2","b":"3"}
@@ -913,15 +936,17 @@
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
                         success: function(jData) {
-                            if(jData.code < 0) {
-                                alert(jData.desc);
+                            if(jData.code != 0) {
+                                var isPreLoader = $('.infinite-scroll-preloader');
+                                isPreLoader.find('.preloader').anim({opacity: 0, display: 'none'});
+                                isPreLoader.find('.preloader-text').text(jData.desc);
                                 return;
                             }
                             // ++me.page;
                             me.token = jData.token;
                             var trainerArr = jData.data;
-                            console.log(jData);
-                            console.log(trainerArr);
+                            // console.log(jData);
+                            // console.log(trainerArr);
                             var htmlArr = [];
                             for(var i in trainerArr) {
                                 var curTrainer = trainerArr[i];
