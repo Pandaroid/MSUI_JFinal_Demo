@@ -241,6 +241,18 @@
             margin-right: 0;
             margin-top: 0;
         }
+
+        .date-btn {
+            width: 3.3rem;
+        }
+        .toast {
+            height: auto;
+            width: 89%;
+            padding: .4rem 1rem;
+            border-radius: .2rem;
+            line-height: 1.8rem;
+            line-height: 1.2rem;
+        }
     </style>
 </head>
 <body>
@@ -634,7 +646,7 @@
                         var datingBtn = $('.date-btn.dating').text('已预约').removeClass('dating').addClass('dated');
                         $.closeModal();
                         // $.alert('预约成功');
-                        $.toast(jData.desc);
+                        // $.toast(jData.desc);
                         //
                         var dcBtn = datingBtn.parents('.date-date-big-btn-wrapper');
                         var dBtns = dcBtn.find('.date-btn');
@@ -936,6 +948,7 @@
                 },
                 isLoading: false,
                 token: getQueryString('token'),
+                city: getQueryString('city'),
                 loadPage: function () {
                     if(this.isLoading) {
                         return ;
@@ -952,6 +965,7 @@
                         // 2 需要强制类型转换，否则格式为 {"a":"2","b":"3"}
                         data: JSON.stringify({
                             token: me.token,
+                            city: me.city,
                             page: me.page,
                             limit: me.limit
                         }),
@@ -962,6 +976,11 @@
                                 var isPreLoader = $('.infinite-scroll-preloader');
                                 isPreLoader.find('.preloader').anim({opacity: 0, display: 'none'});
                                 isPreLoader.find('.preloader-text').text(jData.desc);
+                                window.setTimeout(function () {
+                                    isPreLoader.anim({opacity: 0}, undefined, undefined, function () {
+                                        isPreLoader.hide();
+                                    });
+                                }, 2000);
                                 return;
                             }
                             // ++me.page;
@@ -982,7 +1001,17 @@
                             }, 10);
                             //
                             ++me.page;
+                            //
+                            if(trainerArr && trainerArr.length < me.limit) {
+                                $('.infinite-scroll-preloader').hide();
+                                return;
+                            }
+                            //
                             me.isLoading = false;
+                            //
+                            if($('.infinite-scroll-preloader')[0].offsetTop < $('body').height()) {
+                                infiniteScrollLoader.loadPage();
+                            }
                         } // 注意不要在此行增加逗号
                     });
                     // End  : 从后端接口获取数据
