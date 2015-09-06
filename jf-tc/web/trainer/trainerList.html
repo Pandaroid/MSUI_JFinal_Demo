@@ -247,7 +247,8 @@
         }
         .toast {
             height: auto;
-            width: 89%;
+            width: auto;
+            max-width: 89%;
             padding: .4rem 1rem;
             border-radius: .2rem;
             line-height: 1.8rem;
@@ -1003,7 +1004,10 @@
                             ++me.page;
                             //
                             if(trainerArr && trainerArr.length < me.limit) {
-                                $('.infinite-scroll-preloader').hide();
+                                var isPreLoader = $('.infinite-scroll-preloader')
+                                isPreLoader.anim({opacity: 0}, undefined, undefined, function () {
+                                    isPreLoader.hide();
+                                });
                                 return;
                             }
                             //
