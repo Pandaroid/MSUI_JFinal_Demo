@@ -65,6 +65,28 @@
             margin-bottom: .2rem;
             text-align: justify;
         }
+        .item-description {
+            text-align:justify;
+            /*noinspection CssInvalidPropertyValue*/
+            text-justify:distribute-all-lines;/*ie6-8*/
+            text-align-last:justify;/* ie9*/
+            -moz-text-align-last:justify;/*ff*/
+            -webkit-text-align-last:justify;/*chrome 20+*/
+            clear: both;
+            min-height: 1em;
+            max-width: 100%!important;
+            box-sizing: border-box!important;
+            -webkit-box-sizing: border-box!important;
+            word-wrap: break-word!important;
+        }
+        @media screen and (-webkit-min-device-pixel-ratio:0){/* chrome*/
+            .item-description:after{
+                content:".";
+                display: inline-block;
+                overflow:hidden;
+                height:0;
+            }
+        }
 
         .list-block .item-content {
             padding-left: .9rem;
@@ -211,6 +233,7 @@
             margin-top: .5rem;
             overflow: hidden;
             height: 0;
+            -webkit-transform: translate3d(0px, 0px, 0px); transform: translate3d(0px, 0px, 0px);
         }
 
         .animate-gpu {
@@ -665,10 +688,10 @@
                 var h = dateList.css('height').substr(0, 1);
                 var animDuration = .1;
                 if(h > 0) {
-                    dateList.anim({height: 0}, animDuration);
+                    dateList.anim({height: 0, transform: 'translate3d(0,0,0)'}, animDuration);
                     // dateList.css('height', 0).css('transform', 'scale(1, 0)').css('opacity', 0);
                 } else {
-                    dateList.anim({height: thisDateCollapse.next('.date-list-collapse').data('height')}, animDuration);
+                    dateList.anim({height: thisDateCollapse.next('.date-list-collapse').data('height'), transform: 'translate3d(0,0,0)'}, animDuration);
                     // dateList.css('height', '6.6rem').css('transform', 'scale(1, 1)').css('opacity', 1);
                 }
             });
@@ -950,8 +973,24 @@
                 isLoading: false,
                 token: getQueryString('token'),
                 city: getQueryString('city'),
+                isPreloaderInAnim: false,
                 loadPage: function () {
                     if(this.isLoading) {
+                        if(!infiniteScrollLoader.isPreloaderInAnim) {
+                            infiniteScrollLoader.isPreloaderInAnim = true;
+                            var isPreLoader = $('.infinite-scroll-preloader');
+                            window.setTimeout(function () {
+                                isPreLoader.show();
+                                isPreLoader.anim({opacity: 1}, undefined, undefined, function () {
+                                    window.setTimeout(function () {
+                                        isPreLoader.anim({opacity: 0}, undefined, undefined, function () {
+                                            isPreLoader.hide();
+                                            infiniteScrollLoader.isPreloaderInAnim = false;
+                                        });
+                                    }, 2000);
+                                });
+                            }, 2000);
+                        }
                         return ;
                     }
                     this.isLoading = true;
@@ -1004,10 +1043,14 @@
                             ++me.page;
                             //
                             if(trainerArr && trainerArr.length < me.limit) {
-                                var isPreLoader = $('.infinite-scroll-preloader')
-                                isPreLoader.anim({opacity: 0}, undefined, undefined, function () {
-                                    isPreLoader.hide();
-                                });
+                                if(!infiniteScrollLoader.isPreloaderInAnim) {
+                                    infiniteScrollLoader.isPreloaderInAnim = true;
+                                    var isPreLoader = $('.infinite-scroll-preloader')
+                                    isPreLoader.anim({opacity: 0}, undefined, undefined, function () {
+                                        isPreLoader.hide();
+                                        infiniteScrollLoader.isPreloaderInAnim = false;
+                                    });
+                                }
                                 return;
                             }
                             //

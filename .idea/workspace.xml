@@ -60,16 +60,13 @@
       <file leaf-file-name="trainerList.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45652175">
-              <caret line="988" column="56" selection-start-line="0" selection-start-column="0" selection-end-line="1110" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.57789856">
+              <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
               <folding>
-                <marker date="1441558157550" expanded="true" signature="21184:21219" placeholder="..." />
-                <marker date="1441558157550" expanded="true" signature="21333:21352" placeholder="..." />
-                <marker date="1441558157550" expanded="true" signature="21473:21492" placeholder="..." />
-                <marker date="1441558157550" expanded="true" signature="21599:21617" placeholder="..." />
-                <marker date="1441558157550" expanded="true" signature="21728:21741" placeholder="..." />
-                <marker date="1441558157550" expanded="true" signature="38694:38719" placeholder="..." />
-                <marker date="1441558157550" expanded="true" signature="47270:47281" placeholder="..." />
+                <marker date="1441808888411" expanded="true" signature="22130:22165" placeholder="..." />
+                <marker date="1441808888411" expanded="true" signature="22279:22298" placeholder="..." />
+                <marker date="1441808888411" expanded="true" signature="22419:22438" placeholder="..." />
+                <marker date="1441808888411" expanded="true" signature="22545:22563" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -216,7 +213,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -345,8 +344,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -748,11 +745,13 @@
       <workItem from="1441422967421" duration="24020000" />
       <workItem from="1441543622243" duration="4495000" />
       <workItem from="1441557137121" duration="1172000" />
+      <workItem from="1441733471070" duration="620000" />
+      <workItem from="1441800634730" duration="6100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123964000" />
+    <option name="totallyTimeSpent" value="130684000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -766,6 +765,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329429" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -775,14 +775,13 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3984252" sideWeight="0.48828697" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3984252" sideWeight="0.48828697" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1226,16 +1225,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jf-tc/web/trainer/trainerList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45652175">
-          <caret line="988" column="56" selection-start-line="0" selection-start-column="0" selection-end-line="1110" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.57789856">
+          <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
           <folding>
-            <marker date="1441558157550" expanded="true" signature="21184:21219" placeholder="..." />
-            <marker date="1441558157550" expanded="true" signature="21333:21352" placeholder="..." />
-            <marker date="1441558157550" expanded="true" signature="21473:21492" placeholder="..." />
-            <marker date="1441558157550" expanded="true" signature="21599:21617" placeholder="..." />
-            <marker date="1441558157550" expanded="true" signature="21728:21741" placeholder="..." />
-            <marker date="1441558157550" expanded="true" signature="38694:38719" placeholder="..." />
-            <marker date="1441558157550" expanded="true" signature="47270:47281" placeholder="..." />
+            <marker date="1441808888411" expanded="true" signature="22130:22165" placeholder="..." />
+            <marker date="1441808888411" expanded="true" signature="22279:22298" placeholder="..." />
+            <marker date="1441808888411" expanded="true" signature="22419:22438" placeholder="..." />
+            <marker date="1441808888411" expanded="true" signature="22545:22563" placeholder="..." />
           </folding>
         </state>
       </provider>
