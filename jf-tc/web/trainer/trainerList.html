@@ -52,7 +52,7 @@
             margin-left: 5rem;
             padding-right: 1.9rem;
         }
-        .list-block .item-subtitle { font-weight: bold; }
+        .list-block .item-subtitle { font-weight: bold; overflow: hidden; }
         .list-block, .list-block .item-subtitle { font-size: .92rem; }
         .list-block.media-list .item-media, .list-block li.media-item .item-media { padding-top: .6rem; padding-right: 1rem; }
         .item-title-row {
@@ -68,7 +68,7 @@
         .item-description {
             text-align:justify;
             /*noinspection CssInvalidPropertyValue*/
-            text-justify:distribute-all-lines;/*ie6-8*/
+            text-justify:inter-ideograph;/*ie6-8*/
             text-align-last:justify;/* ie9*/
             -moz-text-align-last:justify;/*ff*/
             -webkit-text-align-last:justify;/*chrome 20+*/
@@ -83,6 +83,7 @@
             .item-description:after{
                 content:".";
                 display: inline-block;
+
                 overflow:hidden;
                 height:0;
             }
@@ -484,17 +485,17 @@
                     return ;
                 }
                 /*$.prompt('培训师会在约定时间与您联系', function (value) {
-                    $.alert('您输入的是 “' + value + '”。');
-                });
-                $('.modal-text-input').attr('placeholder', '请输入您的电话号码');*/
+                 $.alert('您输入的是 “' + value + '”。');
+                 });
+                 $('.modal-text-input').attr('placeholder', '请输入您的电话号码');*/
                 var dataStr = ['data-trainer-time-id="', trainer_time_id, '" data-trainer-id="', trainer_id, '"'].join('');
                 $.modal({
                     text:   ['<div style="text-align: left; font-size: .6rem;">培训师会在约定时间与您联系<span class="modal-close">×</span></div>',
-                            '<input id="ds-name" style="margin-top: .57rem;" placeholder="请输入您的姓名" type="text" class="modal-text-input">',
-                            '<input id="ds-phone" style="margin-top: .54rem;" placeholder="请输入您的电话号码" type="text" class="modal-text-input">',
-                            '<div style="margin-top: .7rem;" class="row">',
-                                '<div class="col-100"><a id="date-submit" ', dataStr,' style="height: auto;" href="#" class="button button-big button-success">确定</a></div>',
-                            '</div>'].join('')
+                        '<input id="ds-name" style="margin-top: .57rem;" placeholder="请输入您的姓名" type="text" class="modal-text-input">',
+                        '<input id="ds-phone" style="margin-top: .54rem;" placeholder="请输入您的电话号码" type="text" class="modal-text-input">',
+                        '<div style="margin-top: .7rem;" class="row">',
+                        '<div class="col-100"><a id="date-submit" ', dataStr,' style="height: auto;" href="#" class="button button-big button-success">确定</a></div>',
+                        '</div>'].join('')
                 });
             });
             //
@@ -811,21 +812,21 @@
                                 '<ul class="date-list date-list-collapse" data-height="', dataHeight,'" style="height: ', dataHeight, ';">',
                                 dateLiArr.join(''),
                                 /*'<li>',
-                                '<div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button button-success date-btn">预约</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">上午 9:00-10:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">下午 2:00-3:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">下午 4:00-5:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',*/
+                                 '<div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>',
+                                 '<div class="date-list-item-btn-div"><a href="#" class="button button-success date-btn">预约</a></div>',
+                                 '</li>',
+                                 '<li>',
+                                 '<div class="date-list-item-time">上午 9:00-10:00</div>',
+                                 '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                 '</li>',
+                                 '<li>',
+                                 '<div class="date-list-item-time">下午 2:00-3:00</div>',
+                                 '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                 '</li>',
+                                 '<li>',
+                                 '<div class="date-list-item-time">下午 4:00-5:00</div>',
+                                 '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                 '</li>',*/
                                 '</ul>',
                                 '</div>',
                                 '</div>',
@@ -863,21 +864,21 @@
                                 '<ul class="date-list date-list-collapse" data-height="', dataHeight,'">',
                                 dateLiArr.join(''),
                                 /*'<li>',
-                                '<div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button button-success date-btn">预约</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">上午 9:00-10:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">下午 2:00-3:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">下午 4:00-5:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',*/
+                                 '<div class="date-list-item-time date-list-item-time-active">上午 8:00-9:00</div>',
+                                 '<div class="date-list-item-btn-div"><a href="#" class="button button-success date-btn">预约</a></div>',
+                                 '</li>',
+                                 '<li>',
+                                 '<div class="date-list-item-time">上午 9:00-10:00</div>',
+                                 '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                 '</li>',
+                                 '<li>',
+                                 '<div class="date-list-item-time">下午 2:00-3:00</div>',
+                                 '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                 '</li>',
+                                 '<li>',
+                                 '<div class="date-list-item-time">下午 4:00-5:00</div>',
+                                 '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                 '</li>',*/
                                 '</ul>',
                                 '</div>',
                                 '</div>',
@@ -916,59 +917,59 @@
                                 '<ul class="date-list date-list-collapse" data-height="', dataHeight,'">',
                                 dateLiArr.join(''),
                                 /*'<li>',
-                                '<div class="date-list-item-time">上午 8:00-9:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">上午 9:00-10:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">下午 2:00-3:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',
-                                '<li>',
-                                '<div class="date-list-item-time">下午 4:00-5:00</div>',
-                                '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
-                                '</li>',*/
+                                 '<div class="date-list-item-time">上午 8:00-9:00</div>',
+                                 '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                 '</li>',
+                                 '<li>',
+                                 '<div class="date-list-item-time">上午 9:00-10:00</div>',
+                                 '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                 '</li>',
+                                 '<li>',
+                                 '<div class="date-list-item-time">下午 2:00-3:00</div>',
+                                 '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                 '</li>',
+                                 '<li>',
+                                 '<div class="date-list-item-time">下午 4:00-5:00</div>',
+                                 '<div class="date-list-item-btn-div"><a href="#" class="button disabled">已满</a></div>',
+                                 '</li>',*/
                                 '</ul>'
                             ].join('');
                         }
                     }
                     //
                     return ['<div data-id="', curTrainer.id,'" style="opacity: 0; transform: translate(0, 25rem)" class="card">',
-                                '<div class="card-content">',
-                                        '<div class="list-block media-list">',
-                                        '<ul>',
-                                        '<li class="item-content item-content-top">',
-                                        '<div class="item-media">',
-                                        '<img class="avatar" src="', curTrainer.avatar,'">',
-                                        '<div class="item-price">',
-                                        '<div class="item-price-free">', (curTrainer.currentprice <= 0) ? '限时免费' : (curTrainer.currentprice + '元'),'</div>',
-                                        '<div class="item-price-per">', curTrainer.originprice,'元/小时</div>',
-                                        '</div>',
-                                        '</div>',
-                                        '<div class="item-inner">',
-                                        '<div class="item-title-row">',
-                                        '<div class="item-title">',
-                                            curTrainer.name,
-                                        '</div>',
-                                        '</div>',
-                                        '<div class="item-subtitle">', curTrainer.title,'</div>',
-                                '<div class="item-description">', curTrainer.description,'</div>',
-                                '</div>',
-                                '</li>',
-                                todayLi,
-                                tomorrowLi,
-                                theDayAfterTomorrowLi,
-                                '</div>',
-                                '</div>',
-                                '</div>',
-                                '</li>',
-                                '</ul>',
-                                '</div>',
-                                '</div>',
-                                '</div>'].join('');
+                        '<div class="card-content">',
+                        '<div class="list-block media-list">',
+                        '<ul>',
+                        '<li class="item-content item-content-top">',
+                        '<div class="item-media">',
+                        '<img class="avatar" src="', curTrainer.avatar,'">',
+                        '<div class="item-price">',
+                        '<div class="item-price-free">', (curTrainer.currentprice <= 0) ? '限时免费' : (curTrainer.currentprice + '元'),'</div>',
+                        '<div class="item-price-per">', curTrainer.originprice,'元/小时</div>',
+                        '</div>',
+                        '</div>',
+                        '<div class="item-inner">',
+                        '<div class="item-title-row">',
+                        '<div class="item-title">',
+                        curTrainer.name,
+                        '</div>',
+                        '</div>',
+                        '<div class="item-subtitle">', curTrainer.title,'</div>',
+                        '<div class="item-description">', curTrainer.description,'</div>',
+                        '</div>',
+                        '</li>',
+                        todayLi,
+                        tomorrowLi,
+                        theDayAfterTomorrowLi,
+                        '</div>',
+                        '</div>',
+                        '</div>',
+                        '</li>',
+                        '</ul>',
+                        '</div>',
+                        '</div>',
+                        '</div>'].join('');
                 },
                 isLoading: false,
                 token: getQueryString('token'),
@@ -1063,27 +1064,27 @@
                     });
                     // End  : 从后端接口获取数据
                     /*var start = (this.page - 1) * this.limit + 1;
-                    var end = this.page * this.limit;
-                    var htmlArr = [this.genCard(start)];
-                    for(var i = start + 1; i <= end; ++i) {
-                        htmlArr.push(this.genCard(i));
-                    }*/
+                     var end = this.page * this.limit;
+                     var htmlArr = [this.genCard(start)];
+                     for(var i = start + 1; i <= end; ++i) {
+                     htmlArr.push(this.genCard(i));
+                     }*/
                     // var me = this;
                     /*setTimeout(function () {
-                        $('.infinite-scroll-preloader').before(htmlArr.join(''));
-                        /!*var infiniteScrollPreloader = $('.infinite-scroll-preloader');
-                        for(idx in htmlArr) {
-                            var html = htmlArr[idx];
-                            infiniteScrollPreloader.before(html);
-                        }*!/
-                        setTimeout(function () {
-                            // $('.card').css('opacity', 1).css('transform', 'translate(0, 0)');
-                            $('.card').anim({opacity: 1, transform: 'translate(0, 0)'});
-                        }, 10);
-                        //
-                        ++me.page;
-                        me.isLoading = false;
-                    }, 1000);*/
+                     $('.infinite-scroll-preloader').before(htmlArr.join(''));
+                     /!*var infiniteScrollPreloader = $('.infinite-scroll-preloader');
+                     for(idx in htmlArr) {
+                     var html = htmlArr[idx];
+                     infiniteScrollPreloader.before(html);
+                     }*!/
+                     setTimeout(function () {
+                     // $('.card').css('opacity', 1).css('transform', 'translate(0, 0)');
+                     $('.card').anim({opacity: 1, transform: 'translate(0, 0)'});
+                     }, 10);
+                     //
+                     ++me.page;
+                     me.isLoading = false;
+                     }, 1000);*/
                 }
             };
             $('.infinite-scroll').scroll(function () {
@@ -1102,50 +1103,50 @@
 
             //
             /*function getList() {
-                /!*$.ajax({
-                    // url: 'http://101.200.176.248/index.php/Trainer/get_list',
-                    url: 'get_list',
-                    data: {
-                        page: 1,
-                        limit: 10,
-                        token: 'DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D'
-                    },
-                    // data: {token: "DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D"},
-                    type: 'POST',
-                    /!*headers: {
-                        "Access-Control-Allow-Origin":"http://example.edu",
-                        "Access-Control-Allow-Headers":"X-Requested-With"
-                    },*!/
-                    contentType: 'application/json',
-                    dataType: 'json',
-                    success: function (data) {
-                        console.log(data);
-                    }
-                });*!/
-                $.ajax({
-                    type: "post",
-                    // url: 'http://101.200.176.248/index.php/Trainer/get_list',
-                    url: 'get_list',
-                    async: false, // 使用同步方式
-                    // 1 需要使用JSON.stringify 否则格式为 a=2&b=3&now=14...
-                    // 2 需要强制类型转换，否则格式为 {"a":"2","b":"3"}
-                    data: JSON.stringify({
-                        token: 'DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D'
-                    }),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function(jData) {
-                        if(jData.code < 0) {
-                            alert(jData.desc);
-                            return;
-                        }
-                        var token = jData.token;
-                        var data = jData.data;
-                        console.log(jData);
-                        console.log(data);
-                    } // 注意不要在此行增加逗号
-                });
-            }*/
+             /!*$.ajax({
+             // url: 'http://101.200.176.248/index.php/Trainer/get_list',
+             url: 'get_list',
+             data: {
+             page: 1,
+             limit: 10,
+             token: 'DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D'
+             },
+             // data: {token: "DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D"},
+             type: 'POST',
+             /!*headers: {
+             "Access-Control-Allow-Origin":"http://example.edu",
+             "Access-Control-Allow-Headers":"X-Requested-With"
+             },*!/
+             contentType: 'application/json',
+             dataType: 'json',
+             success: function (data) {
+             console.log(data);
+             }
+             });*!/
+             $.ajax({
+             type: "post",
+             // url: 'http://101.200.176.248/index.php/Trainer/get_list',
+             url: 'get_list',
+             async: false, // 使用同步方式
+             // 1 需要使用JSON.stringify 否则格式为 a=2&b=3&now=14...
+             // 2 需要强制类型转换，否则格式为 {"a":"2","b":"3"}
+             data: JSON.stringify({
+             token: 'DNkrQv2fXMr5h5THpDO4w91CYSuYmEdDlw9Dqo9hBMlPkR4g-XkItzKcoPCuAJ4rh3Wi6NvJNvfbNDQ_-5n0Ig%3D%3D'
+             }),
+             contentType: "application/json; charset=utf-8",
+             dataType: "json",
+             success: function(jData) {
+             if(jData.code < 0) {
+             alert(jData.desc);
+             return;
+             }
+             var token = jData.token;
+             var data = jData.data;
+             console.log(jData);
+             console.log(data);
+             } // 注意不要在此行增加逗号
+             });
+             }*/
             // getList();
         });
     })(Zepto);
